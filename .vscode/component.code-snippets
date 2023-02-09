@@ -29,7 +29,8 @@
 			"		<div className={classNames(cls.${TM_FILENAME_BASE}, {}, [className])}>  ",
 			"		</div>",
 			"	)",
-			"}"],
+			"}",
+			""],
 		"description": "React component with css modules"
 	}
 }

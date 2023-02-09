@@ -1,7 +1,7 @@
 import webpack, { web } from 'webpack';
 import { BuildOptions } from './types/config';
 
-export function buildResolvers(options: BuildOptions ): webpack.ResolveOptions {
+export function buildResolvers (options: BuildOptions): webpack.ResolveOptions {
   return {
     extensions: ['.tsx', '.ts', '.js'],
     preferAbsolute: true,
@@ -10,5 +10,3 @@ export function buildResolvers(options: BuildOptions ): webpack.ResolveOptions {
     alias: {}
   }
 }
-
-
