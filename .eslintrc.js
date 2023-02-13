@@ -24,7 +24,7 @@ module.exports = {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     'indent': [2,2],
-    
+    'no-trailing-spaces': 'off',
     'import/no-unresolved': 'off',
     "semi": "off",
     "@typescript-eslint/semi": "off",
@@ -35,6 +35,7 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-floating-promises": "warn",
     "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-confusing-void-expression": "warn",
     "react/react-in-jsx-scope": "off",
     "i18next/no-literal-string": ['error', {markupOnly: true}]
   },
