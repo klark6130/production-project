@@ -37,9 +37,17 @@ module.exports = {
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-confusing-void-expression": "warn",
     "react/react-in-jsx-scope": "off",
-    "i18next/no-literal-string": ['error', {markupOnly: true}]
+    "i18next/no-literal-string": ['error', {markupOnly: true, ignoreAttribute: ["data-testid"]}]
   },
   globals: {
     __IS_DEV__: true
-  }
+  },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off'
+      }
+    }
+  ]
 }
