@@ -22,4 +22,4 @@ const AppLink: FC<AppLinkProps> = (props) => {
   )
 }
 
-export default AppLink
+export { AppLink }

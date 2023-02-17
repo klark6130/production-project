@@ -3,27 +3,19 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript',
-    "plugin:i18next/recommended"
-  ],
-  overrides: [
-  ],
+  extends: ["plugin:react/recommended", "standard-with-typescript", "plugin:i18next/recommended", "plugin:storybook/recommended"],
+  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ['tsconfig.json']
   },
-  plugins: [
-    'react',
-    'i18next'
-  ],
+  plugins: ['react', 'i18next'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
-    'indent': [2,2],
+    'indent': [2, 2],
     'no-trailing-spaces': 'off',
     'import/no-unresolved': 'off',
     "semi": "off",
@@ -37,17 +29,18 @@ module.exports = {
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-confusing-void-expression": "warn",
     "react/react-in-jsx-scope": "off",
-    "i18next/no-literal-string": ['error', {markupOnly: true, ignoreAttribute: ["data-testid"]}]
+    "i18next/no-literal-string": ['error', {
+      markupOnly: true,
+      ignoreAttribute: ["data-testid", "to"]
+    }]
   },
   globals: {
     __IS_DEV__: true
   },
-  overrides: [
-    {
-      files: ['**/src/**/*.test.{ts,tsx}'],
-      rules: {
-        'i18next/no-literal-string': 'off'
-      }
+  overrides: [{
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off'
     }
-  ]
-}
+  }]
+};
