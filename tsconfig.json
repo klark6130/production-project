@@ -21,7 +21,9 @@
   },
   // In tsconfig.json
   "include": [
-    "./config/jest/setupTests.ts",
+    "./*.ts",
+    "./config/**/*.ts",
+    "./config/**/*.tsx",
     "./src/**/*.ts",
     "./src/**/*.tsx",
   ],
