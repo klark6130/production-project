@@ -11,7 +11,11 @@ module.exports = {
     sourceType: 'module',
     project: ['tsconfig.json']
   },
-  plugins: ['react', 'i18next'],
+  plugins: [
+    'react', 
+    'i18next',
+    'react-hooks'
+  ],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -27,12 +31,14 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-floating-promises": "warn",
     "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/no-confusing-void-expression": "warn",
+    "@typescript-eslint/no-confusing-void-expression": "off",
     "react/react-in-jsx-scope": "off",
     "i18next/no-literal-string": ['error', {
       markupOnly: true,
       ignoreAttribute: ["data-testid", "to"]
-    }]
+    }],
+    "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
+    "react-hooks/exhaustive-deps": "error" // Проверяем зависимости эффекта
   },
   globals: {
     __IS_DEV__: true
