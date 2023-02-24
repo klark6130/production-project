@@ -22,15 +22,28 @@
 			"import cls from './${TM_FILENAME_BASE}.module.scss';",
 			"",
 			"interface ${TM_FILENAME_BASE}Props {",
-			"	className?: string",
+			"  className?: string",
 			"} ",
 			"export const ${TM_FILENAME_BASE} = ({className}: ${TM_FILENAME_BASE}Props) => {",
-			"	return (",
-			"		<div className={classNames(cls.${TM_FILENAME_BASE}, {}, [className])}>  ",
-			"		</div>",
-			"	)",
+			"  return (",
+			"    <div className={classNames(cls.${TM_FILENAME_BASE}, {}, [className])}>  ",
+			"    </div>",
+			"  )",
 			"}",
 			""],
 		"description": "React component with css modules"
+	},
+	"Test for file": {
+		"scope": "javascript,typescript,javascriptreact,typescriptreact",
+		"prefix": "test for file",
+		"body": [
+			"describe('${TM_FILENAME_BASE}', () => {",
+			"  test('', () => {",
+			"    expect( ).toEqual( );",
+			"  })",
+			"});",
+			""
+		],
+		"description": "Test for file"
 	}
 }

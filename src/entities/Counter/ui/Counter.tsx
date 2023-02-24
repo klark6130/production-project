@@ -21,11 +21,9 @@ export const Counter = (props: CounterProps) => {
   }
   return (
     <div >  
-      <h1>
-        value - {counterValue}
-        <Button onClick={increment}>Increment</Button>
-        <Button onClick={decrement}>Decrement</Button>
-      </h1>
+      <h1 data-testid="value-title">{counterValue}</h1>
+      <Button data-testid="increment-btn" onClick={increment}>Increment</Button>
+      <Button data-testid="decrement-btn" onClick={decrement}>Decrement</Button>
     </div>
   )
 }
