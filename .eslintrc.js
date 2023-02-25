@@ -23,6 +23,7 @@ module.exports = {
     'no-trailing-spaces': 'off',
     'import/no-unresolved': 'off',
     "semi": "off",
+    "eol-last": ["off"],
     "@typescript-eslint/semi": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/prefer-nullish-coalescing": "off",
