@@ -11,5 +11,8 @@
   "Обновить страницу": "Reload page",
   "Переключить": "Toggle",
   "Введите username": "Input username",
-  "Введите пароль": "Input password"
+  "Введите пароль": "Input password",
+  "Войти": "Login",
+  "Форма авторизации": "Auth form",
+  "Неверный логин/пароль": "Incorrect username/password"
 }

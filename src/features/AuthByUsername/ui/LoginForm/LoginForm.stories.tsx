@@ -5,6 +5,7 @@ import { ComponentStory, ComponentMeta, addDecorator } from '@storybook/react';
 import { LoginForm } from './LoginForm';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
   title: 'features/LoginForm',
@@ -22,3 +23,24 @@ Primary.args = {
   placeholder: 'Type text',
   value: '123123'
 };
+Primary.decorators = [StoreDecorator({
+  loginForm: { username: 'adminnnn', password: '123' }
+})]
+
+export const withError = Template.bind({});
+withError.args = {
+  placeholder: 'Type text',
+  value: '123123'
+};
+withError.decorators = [StoreDecorator({
+  loginForm: { username: 'adminnnn', password: '123', error: 'Error happend' }
+})]
+
+export const Loading = Template.bind({});
+Loading.args = {
+  placeholder: 'Type text',
+  value: '123123'
+};
+Loading.decorators = [StoreDecorator({
+  loginForm: { isLoading: true }
+})]
