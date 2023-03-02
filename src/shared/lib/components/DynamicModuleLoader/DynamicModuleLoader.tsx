@@ -18,6 +18,8 @@ interface DynamicModuleLoaderProps {
   removeAfterUnmount?: boolean
 } 
 
+// МОЖНО ПОТОМ переделать в ХУК
+
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
   const { children, reducers, removeAfterUnmount } = props;
   const { t } = useTranslation();

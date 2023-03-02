@@ -17,5 +17,5 @@ export const getLoginIsLoading = (state: StateSchema) => {
 }
 
 export const getLoginError = (state: StateSchema) => {
-  return state?.loginForm?.error || '';
+  return state?.loginForm?.error || undefined;
 }
