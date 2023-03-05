@@ -20,6 +20,7 @@ module.exports = {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     'indent': [2, 2],
+    'padded-blocks': ['off', 'never'],
     'no-trailing-spaces': 'off',
     'import/no-unresolved': 'off',
     "semi": "off",

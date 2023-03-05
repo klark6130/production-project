@@ -34,7 +34,14 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "first": "Dmitry",
+    "lastname": "Bastrikov",
+    "age": 31,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Krasnodar",
+    "username":"admin",
+    "avatar": "https://www.w3schools.com/howto/img_avatar.png"
   },
   "users": [
     {
