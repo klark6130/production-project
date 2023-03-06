@@ -4,6 +4,7 @@
   "Главная страница": "Main page",
   "Главная": "Main",
   "О нас": "About us",
+  "О сайте": "About site",
   "Язык": "English",
   "Короткий язык": "En",
   "Страница не найдена": "Page not found",
@@ -13,6 +14,8 @@
   "Введите username": "Input username",
   "Введите пароль": "Input password",
   "Войти": "Login",
+  "Выйти": "Logout",
   "Форма авторизации": "Auth form",
-  "Неверный логин/пароль": "Incorrect username/password"
+  "Неверный логин/пароль": "Incorrect username/password",
+  "Профиль": "Profile"
 }
