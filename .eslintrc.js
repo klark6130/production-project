@@ -34,6 +34,7 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "warn",
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-confusing-void-expression": "off",
+    "@typescript-eslint/no-invalid-void-type": "off",
     "react/react-in-jsx-scope": "off",
     "react/display-name": ["off", { "ignoreTranspilerName": false, "checkContextObjects": true }],
     "i18next/no-literal-string": ['error', {
@@ -41,7 +42,8 @@ module.exports = {
       ignoreAttribute: ["data-testid", "to"]
     }],
     "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
-    "react-hooks/exhaustive-deps": "error" // Проверяем зависимости эффекта
+    "react-hooks/exhaustive-deps": "error", // Проверяем зависимости эффекта
+    "no-undef": "off"
   },
   globals: {
     __IS_DEV__: true,
