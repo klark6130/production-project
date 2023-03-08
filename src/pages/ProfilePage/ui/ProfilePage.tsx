@@ -42,7 +42,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
   }, [dispatch])
 
   const onChangeAge = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ age: Number(value || 0) }))
+    dispatch(profileActions.updateProfile({ age: Number(value?.replace(/\D/gi, '')) || 0 }))
   }, [dispatch])
 
   const onChangeUsername = useCallback((value?: string) => {
