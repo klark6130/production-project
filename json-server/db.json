@@ -35,13 +35,13 @@
   ],
   "profile": {
     "first": "Dmitry",
-    "lastname": "Bastrikov",
+    "lastname": "Bastrikov_1",
     "age": 31,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Krasnodar",
-    "username":"admin",
-    "avatar": "https://www.w3schools.com/howto/img_avatar.png"
+    "currency": "USD",
+    "country": "Kazakhstan",
+    "city": "Krasnodar_1",
+    "username": "administrator",
+    "avatar": "https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"
   },
   "users": [
     {

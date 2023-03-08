@@ -17,5 +17,7 @@
   "Выйти": "Logout",
   "Форма авторизации": "Auth form",
   "Неверный логин/пароль": "Incorrect username/password",
-  "Профиль": "Profile"
+  "Профиль": "Profile",
+  "Валюта": "Currency",
+  "Страна": "Country"
 }

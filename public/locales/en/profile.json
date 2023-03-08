@@ -1,6 +1,13 @@
 {
   "Профиль": "Profile",
   "Редактировать": "Edit",
+  "Сохранить": "Save",
   "Ваше имя": "Your name",
-  "Ваша фамилия": "Your lastname"
+  "Ваша фамилия": "Your lastname",
+  "Ваша возраст": "Your age",
+  "Ваш город": "Your city",
+  "Имя пользователя": "Username",
+  "Ссылка на аватар": "Link to avatar",
+  "Ошибка при загрузке профиля": "Error while profile",
+  "Попробуйте обновить страницу": "Try reload page"
 }

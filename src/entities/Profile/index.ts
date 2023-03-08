@@ -1,3 +1,5 @@
+
+
 export type {
   Profile,
   ProfileSchema
@@ -12,6 +14,18 @@ export {
   fetchProfileData
 } from './model/services/fetchProfileData/fetchProfileData';
 
+export { 
+  updateProfileData 
+} from './model/services/updateProfileData/updateProfileData';
+
 export {
   ProfileCard
 } from './ui/ProfileCard/ProfileCard';
+
+export { 
+  getProfileIsLoading,
+  getProfileData,
+  getProfileForm,
+  getProfileError,
+  getProfileReadonly
+} from './model/selectors/getProfileData';
