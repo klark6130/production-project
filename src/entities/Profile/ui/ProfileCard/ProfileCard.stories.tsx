@@ -30,7 +30,7 @@ Primary.args = {
     first: 'Dmitry',
     city: 'Krasnodar',
     currency: Currency.EUR,
-    avatar: 'https://static.vecteezy.com/system/resources/previews/006/487/917/original/man-avatar-icon-free-vector.jpg'
+    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
   }
 };
 Primary.decorators = [StoreDecorator({

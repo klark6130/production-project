@@ -1,19 +1,11 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack'
 import { BuildOptions } from './types/config';
 import { buildCssLoaders } from './loaders/buildCssLoaders';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
-export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-  const babelLoader = {
-    test: /\.(js|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env']
-      }
-    }
-  }
+export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
+  const { isDev } = options;
+  const babelLoader = buildBabelLoader(options);
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
@@ -39,7 +31,7 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   return [
     fileLoader,
     svgLoader,
-    // babelLoader,
+    babelLoader,
     typescriptLoader,
     cssLoader
   ]
