@@ -35,6 +35,7 @@ module.exports = {
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-confusing-void-expression": "off",
     "@typescript-eslint/no-invalid-void-type": "off",
+    "@typescript-eslint/indent": "off",
     "react/react-in-jsx-scope": "off",
     "react/display-name": ["off", { "ignoreTranspilerName": false, "checkContextObjects": true }],
     "i18next/no-literal-string": ['error', {
