@@ -1,4 +1,4 @@
-
+export { ValidateProfileError } from './model/types/profile';
 
 export type {
   Profile,
@@ -27,5 +27,6 @@ export {
   getProfileData,
   getProfileForm,
   getProfileError,
-  getProfileReadonly
+  getProfileReadonly,
+  getProfileValidateErrors
 } from './model/selectors/getProfileData';

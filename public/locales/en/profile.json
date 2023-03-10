@@ -8,6 +8,11 @@
   "Ваш город": "Your city",
   "Имя пользователя": "Username",
   "Ссылка на аватар": "Link to avatar",
-  "Ошибка при загрузке профиля": "Error while profile",
-  "Попробуйте обновить страницу": "Try reload page"
+  "Ошибка при загрузке профиля": "Error while load profile",
+  "Попробуйте обновить страницу": "Try reload page",
+  "Ошибка на сервере при сохранении профиля": "Error while save profile",
+  "Некорректная страна": "Incorrect country",
+  "Некорректный возраст": "Incorrect age",
+  "Данные не указаны": "No data",
+  "Имя и фамилия обязательны": "First and last name are required"
 }

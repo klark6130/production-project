@@ -13,3 +13,5 @@ export const getProfileIsLoading = (state: StateSchema) => state.profile?.isLoad
 export const getProfileError = (state: StateSchema) => state.profile?.error;
 
 export const getProfileReadonly = (state: StateSchema) => state.profile?.readonly;
+
+export const getProfileValidateErrors = (state: StateSchema) => state.profile?.validateError;
