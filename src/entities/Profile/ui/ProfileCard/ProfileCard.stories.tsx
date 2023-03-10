@@ -8,7 +8,6 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/tests/for_storybook.png';
 
 export default {
   title: 'entities/ProfileCard',
@@ -31,7 +30,7 @@ Primary.args = {
     first: 'Dmitry',
     city: 'Krasnodar',
     currency: Currency.EUR,
-    avatar: avatar
+    avatar: 'https://static.vecteezy.com/system/resources/previews/006/487/917/original/man-avatar-icon-free-vector.jpg'
   }
 };
 Primary.decorators = [StoreDecorator({

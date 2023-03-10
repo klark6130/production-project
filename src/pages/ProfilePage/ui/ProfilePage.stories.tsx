@@ -32,7 +32,8 @@ Normal.decorators = [
         lastname: 'B.',
         first: 'Dmitry',
         city: 'Krasnodar',
-        currency: Currency.EUR
+        currency: Currency.EUR,
+        avatar: 'https://static.vecteezy.com/system/resources/previews/006/487/917/original/man-avatar-icon-free-vector.jpg'
       }
     }
   })
