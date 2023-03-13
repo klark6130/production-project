@@ -1,5 +1,9 @@
 export { 
-  getUserAuthData 
+  getUserInited 
+} from './model/selectors/getUserAuthData/getUserInited';
+
+export { 
+  getUserAuthData
 } from './model/selectors/getUserAuthData/getUserAuthData';
 
 export { 
