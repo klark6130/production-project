@@ -9,11 +9,9 @@ interface ArticlesPageProps {
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const { t } = useTranslation();
   return (
-    <div className={classNames(cls.ArticlesPage, {}, [className]) }>  
-      Articles Page
+    <div className={classNames(cls.ArticlesPage, {}, [className]) }>
     </div>
   )
 }
-
 
 export default memo(ArticlesPage);
