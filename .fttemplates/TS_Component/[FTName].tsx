@@ -9,7 +9,7 @@ interface [FTName]Props {
 export const [FTName] = memo(({ className }: [FTName]Props) => {
   const { t } = useTranslation();
   return (
-    <div className={classNames(cls.[FTName], {}, [className]) }>  
+    <div className={classNames(cls.[FTName], {}, [className]) }>
     </div>
   )
 });
