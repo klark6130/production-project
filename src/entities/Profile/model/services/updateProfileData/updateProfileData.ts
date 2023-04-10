@@ -15,7 +15,8 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
       return thunkAPI.rejectWithValue(errors)
     }
     try {
-      const response = await thunkAPI.extra.api.put<Profile>('/profile', formData);
+      // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+      const response = await thunkAPI.extra.api.put<Profile>('/profile/' + formData?.id, formData);
 
       if (!response.data) {
         throw new Error('error');
