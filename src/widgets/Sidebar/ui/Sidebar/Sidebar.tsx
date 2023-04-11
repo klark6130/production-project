@@ -8,27 +8,29 @@ import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { SidebarItemList } from 'widgets/Sidebar/model/items';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { useSelector } from 'react-redux';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 
 interface SidebarProps {
   className?: string
 }
 export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
+  const sidebarItemList = useSelector(getSidebarItems);
 
   const onToggle = () => {
     setCollapsed(prev => !prev);
   }
 
   const itemsList = useMemo(() => {
-    return SidebarItemList.map(item => (
+    return sidebarItemList.map(item => (
       <SidebarItem 
         item={item}
         key={item.path}
         collapsed={collapsed}/>
     ))
-  }, [collapsed])
+  }, [sidebarItemList, collapsed])
 
   return (
     <div
