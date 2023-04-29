@@ -31,7 +31,7 @@ module.exports = {
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/consistent-type-imports": "off",
     "@typescript-eslint/no-unused-vars": "warn",
-    "@typescript-eslint/no-floating-promises": "warn",
+    "@typescript-eslint/no-floating-promises": "off", //
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-confusing-void-expression": "off",
     "@typescript-eslint/no-invalid-void-type": "off",

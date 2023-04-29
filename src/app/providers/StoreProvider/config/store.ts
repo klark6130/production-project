@@ -21,8 +21,7 @@ export function createReduxStore (
   const reducerManager = createReducerManager(rootReducers);
 
   const extraArg: ThunkExtraArg = {
-    api: $api,
-    navigate
+    api: $api
   }
   
   const store = configureStore({
