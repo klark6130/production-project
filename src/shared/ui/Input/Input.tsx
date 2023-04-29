@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLInputTypeAttribute, InputHTMLAttributes, LegacyRef, MutableRefObject, ReactHTMLElement, memo, useEffect, useRef, useState } from 'react';
+import { InputHTMLAttributes, memo, useEffect, useRef } from 'react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
