@@ -3,17 +3,17 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArticlesPage from './ArticlesPage';
+import { ArticleSortSelector } from './ArticleSortSelector';
 
 export default {
-  title: 'pages/Article/ArticlesPage',
-  component: ArticlesPage,
+  title: 'entities/Article/ArticleSortSelector',
+  component: ArticleSortSelector,
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as ComponentMeta<typeof ArticlesPage>;
+} as ComponentMeta<typeof ArticleSortSelector>;
 
-const Template: ComponentStory<typeof ArticlesPage> = (args: any) => <ArticlesPage {...args} />;
+const Template: ComponentStory<typeof ArticleSortSelector> = (args: any) => <ArticleSortSelector {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {

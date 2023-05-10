@@ -12,6 +12,8 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import { initArticlesPage } from '../../model/services/initArticlesPage';
 import { articlePageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlices';
 import cls from './ArticlesPage.module.scss';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
+import { useSearchParams } from 'react-router-dom';
 
 interface ArticlesPageProps {
   className?: string
@@ -28,19 +30,15 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPageError);
   const view = useSelector(getArticlesPageView);
-  const page = useSelector(getArticlesPageNum);
-  const hasMore = useSelector(getArticlesPageHasMore);
-  
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlePageActions.setView(view))
-  }, [dispatch])
+
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage())
   }, [dispatch])
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage())
+    dispatch(initArticlesPage(searchParams))
   })
 
   if (error) {
@@ -55,8 +53,9 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className]) }
       >
-        <ArticleViewSelector view={view} onViewClick={onChangeView}/>
+        <ArticlesPageFilters />
         <ArticleList
+          className={cls.list}
           isLoading={isLoading}
           view={view}
           articles={articles}
