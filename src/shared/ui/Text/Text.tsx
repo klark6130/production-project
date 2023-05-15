@@ -4,6 +4,7 @@ import { memo } from 'react';
 
 export enum TextTheme {
   PRIMARY = 'primary',
+  INVERTED = 'inverted',
   ERROR = 'error'
 }
 
@@ -22,7 +23,7 @@ interface TextProps {
   className?: string
   title?: string
   text?: string
-  theme?: TextTheme.ERROR
+  theme?: TextTheme
   align?: TextAlign
   size?: TextSize
 } 
