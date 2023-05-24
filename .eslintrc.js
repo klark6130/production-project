@@ -14,7 +14,8 @@ module.exports = {
   plugins: [
     'react', 
     'i18next',
-    'react-hooks'
+    'react-hooks',
+    'bastrikov-da-eslint-plugin'
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -44,7 +45,8 @@ module.exports = {
     }],
     "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
     "react-hooks/exhaustive-deps": "error", // Проверяем зависимости эффекта
-    "no-undef": "off"
+    "no-undef": "off",
+    'bastrikov-da-eslint-plugin/path-checker': 'error'
   },
   globals: {
     __IS_DEV__: true,

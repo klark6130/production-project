@@ -10,7 +10,7 @@ import { getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getAr
 import { articlePageActions } from '../../model/slices/articlesPageSlices';
 import cls from './ArticlesPageFilters.module.scss';
 import { SortOrder } from 'shared/types';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 import { ArticleType } from 'entities/Article/model/types/article';

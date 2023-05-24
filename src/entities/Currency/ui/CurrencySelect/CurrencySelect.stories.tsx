@@ -2,7 +2,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta, addDecorator } from '@storybook/react';
 import { CurrencySelect } from './CurrencySelect';
-import { Currency } from 'entities/Currency/model/types/currency';
+import { Currency } from '../../model/types/currency';
 
 export default {
   title: 'entities/CurrencySelect',
