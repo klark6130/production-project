@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ProfilePageHeader.module.scss';
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,6 +8,7 @@ import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useParams } from 'react-router-dom';
 import { getUserAuthData } from 'entities/User';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 
 interface ProfilePageHeaderProps {
   className?: string
@@ -42,24 +42,22 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch, id])
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack max justify={'between'} className={classNames('', {}, [className])}>
       <Text title={t('Профиль')} />
       
       {canEdit && (
-        <div className={cls.btnsWrapper}>
+        <>
           {readOnly 
             ? (
               <Button 
-                className={cls.editBtn} 
                 theme={ButtonTheme.OUTLINE}
                 onClick={onEdit}
               >
                 { t('Редактировать')}
               </Button>)
             : (
-              <>
+              <HStack gap='8'>
                 <Button 
-                  className={cls.editBtn} 
                   theme={ButtonTheme.OUTLINE_RED}
                   onClick={onCancelEdit}
                 >
@@ -71,11 +69,11 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                 >
                   { t('Сохранить')}
                 </Button>
-              </>)
+              </HStack>)
           }
-        </div>
+        </>
       )}
       
-    </div>
+    </HStack>
   )
 }
