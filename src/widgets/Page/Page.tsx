@@ -1,14 +1,14 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { MutableRefObject, ReactNode, UIEvent, memo, useRef } from 'react';
-import cls from './Page.module.scss';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { getUIScrollByPath, uiActions } from 'features/UI';
-import { useLocation } from 'react-router-dom';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/StoreProvider';
+import { getUIScrollByPath, uiActions } from 'features/UI';
+import { MutableRefObject, ReactNode, UIEvent, memo, useRef } from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useThrottle } from 'shared/lib/hooks/useThrottle';
+import cls from './Page.module.scss';
 
 interface PageProps {
   className?: string
@@ -45,7 +45,7 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
   })
 
   return (
-    <section 
+    <main 
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className]) }
       onScroll={onScroll}
@@ -53,6 +53,6 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
     >
       {children}
       { onScrollEnd ? <div className={cls.trigger} ref={triggerRef}/> : null }
-    </section>
+    </main>
   )
 });
