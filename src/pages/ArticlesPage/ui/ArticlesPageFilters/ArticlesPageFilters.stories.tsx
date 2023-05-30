@@ -18,4 +18,6 @@ const Template: ComponentStory<typeof ArticlesPageFilters> = (args: any) => <Art
 export const Normal = Template.bind({});
 Normal.args = {
 };
-Normal.decorators = []
+Normal.decorators = [
+  StoreDecorator({})
+]

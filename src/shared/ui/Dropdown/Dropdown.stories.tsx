@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 /* eslint-disable @typescript-eslint/consistent-type-assertions */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -21,13 +22,13 @@ Normal.args = {
   trigger: <Button>Open!</Button>,
   items: [
     {
-      content: 'First',
+      content: 'First'
     },
     {
-      content: 'Second',
+      content: 'Second'
     },
     {
-      content: 'Third',
+      content: 'Third'
     }
   ]
 };
