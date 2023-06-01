@@ -54,7 +54,7 @@ module.exports = {
     __PROJECT__: true
   },
   overrides: [{
-    files: ['**/src/**/*.test.{ts,tsx}'],
+    files: ['**/src/**/*.test.{ts,tsx}', './scripts/**/*.js'],
     rules: {
       'i18next/no-literal-string': 'off'
     }
