@@ -2,9 +2,9 @@ const firstUpper = require('../firstUpper.js');
 
 module.exports = (sliceName) => {
   return `export type { 
-  ${firstUpper(sliceName)}
-} from './model/types/${sliceName}';
+  ${firstUpper(sliceName)}Schema
+} from './model/types/${sliceName}Schema'
 
-export { ${firstUpper(sliceName)}Component } from './ui/${firstUpper(sliceName)}/${firstUpper(sliceName)}';
+export { ${firstUpper(sliceName)} } from './ui/${firstUpper(sliceName)}/${firstUpper(sliceName)}';
 `
 }

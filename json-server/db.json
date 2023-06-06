@@ -613,6 +613,12 @@
       "userId": "1",
       "text": "sdfsdfs",
       "id": "QZSMoEp"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "hello",
+      "id": "k1XDueA"
     }
   ],
   "users": [
@@ -635,7 +641,7 @@
     {
       "id": "1",
       "first": "jghwer3333",
-      "lastname": "asfewr",
+      "lastname": "Bastrikkov",
       "age": 78,
       "currency": "EUR",
       "country": "Belarus",

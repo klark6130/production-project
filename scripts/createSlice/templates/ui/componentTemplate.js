@@ -10,7 +10,7 @@ interface ${componentName}Props {
   isLoading?: boolean
 } 
 
-export const ${componentName}Component = memo(({ className, isLoading }: ${componentName}Props) => {
+export const ${componentName} = memo(({ className, isLoading }: ${componentName}Props) => {
   const { t } = useTranslation('${componentName}');
 
   return (
