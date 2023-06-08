@@ -9,6 +9,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import {
   getProfileError,
@@ -21,7 +22,6 @@ import { fetchProfileData } from '../../model/services/fetchProfileData/fetchPro
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from 'shared/ui/Stack';
 
 interface EditableProfileCardProps {
   className?: string

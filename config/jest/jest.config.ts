@@ -60,6 +60,15 @@ export default {
   // The glob patterns Jest uses to detect test files
   testMatch: [
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
+  ],
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      openReport: true,
+      inlineSource: true
+    }]
   ]
 
   // Indicates whether the coverage information should be collected while executing the test
