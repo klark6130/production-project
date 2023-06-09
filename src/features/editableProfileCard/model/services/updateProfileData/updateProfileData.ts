@@ -13,6 +13,7 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
     const errors = validateProfileData(formData);
 
     if (errors.length) {
+      await new Promise(resolve => setTimeout(resolve, 2000));
       return thunkAPI.rejectWithValue(errors)
     }
     try {

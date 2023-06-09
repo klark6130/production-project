@@ -15,6 +15,7 @@ interface ArticleListProps {
   isLoading?: boolean
   target?: HTMLAttributeAnchorTarget
   view?: ArticleView
+  virtualized?: boolean
 } 
 
 const getSkeletons = (view: ArticleView) => {
@@ -25,7 +26,7 @@ const getSkeletons = (view: ArticleView) => {
     ))
 }
 
-export const ArticleList = memo(({ className, articles, view = ArticleView.TILE, isLoading, target }: ArticleListProps) => {
+export const ArticleList = memo(({ className, articles, view = ArticleView.TILE, isLoading, target, virtualized = true }: ArticleListProps) => {
   const { t } = useTranslation('article');
 
   const isBig = view === ArticleView.LIST;
@@ -81,17 +82,33 @@ export const ArticleList = memo(({ className, articles, view = ArticleView.TILE,
           ref={registerChild}
           className={classNames(cls.ArticleList, {}, [className, cls[view]]) }
         >
-          <List
-            height={height ?? 700}
-            width={width ? width - 80 : 700}
-            rowCount={rowCount}
-            rowHeight={isBig ? 700 : 330}
-            rowRenderer={rowRender}
-            autoHeight
-            onScroll={onChildScroll}
-            isScrolling = {isScrolling}
-            scrollTop={scrollTop}
-          />
+          {virtualized
+            ? (
+              <List
+                height={height ?? 700}
+                width={width ? width - 80 : 700}
+                rowCount={rowCount}
+                rowHeight={isBig ? 700 : 330}
+                rowRenderer={rowRender}
+                autoHeight
+                onScroll={onChildScroll}
+                isScrolling = {isScrolling}
+                scrollTop={scrollTop}
+              />
+            )
+            : (
+              articles.map(item => (
+                <ArticleListItem 
+                  article={item}
+                  view={view}
+                  target={target}
+                  key={item.id}
+                  className={cls.card}
+                />
+              ))
+            )
+          }
+          
           {isLoading && getSkeletons(view) }
         </div>
       )}

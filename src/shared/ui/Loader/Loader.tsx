@@ -7,7 +7,7 @@ interface LoaderProps {
 
 export const Loader = ({ className }: LoaderProps) => {
   return (
-    <div className={classNames('lds-hourglass', {}, [className])}>
+    <div role="loader" className={classNames('lds-hourglass', {}, [className])} >
     </div>
   )
 }
