@@ -1,3 +1,5 @@
+export { UserRole } from './model/types/user';
+
 export { 
   getUserInited 
 } from './model/selectors/getUserAuthData/getUserInited';
@@ -5,6 +7,8 @@ export {
 export { 
   getUserAuthData
 } from './model/selectors/getUserAuthData/getUserAuthData';
+
+export { isUserAdmin, isUserManager, getUserRoles } from './model/selectors/getUserAuthData/getUserRole';
 
 export { 
   userReducer, 

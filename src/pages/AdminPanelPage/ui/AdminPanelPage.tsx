@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { Page } from 'widgets/Page/Page';
 
 const AboutPage = memo(() => {
-  const { t } = useTranslation('about'); // перевод согласно чанку (about.json в public/locales)
+  const { t } = useTranslation('admin'); // перевод согласно чанку (about.json в public/locales)
   return (
     <Page>
-      { t('О сайте')}
+      { t('Admin панель')}
     </Page>
   )
 })

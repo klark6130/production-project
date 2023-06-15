@@ -626,14 +626,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://www.clipartmax.com/png/middle/260-2600984_male-computer-user-user-sitting-on-a-computer.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://e1.pngegg.com/pngimages/356/954/png-clipart-mr-robot-tv-series-folder-icon-2015-mr-robot-256x256-thumbnail.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
       "avatar": "https://e1.pngegg.com/pngimages/356/954/png-clipart-mr-robot-tv-series-folder-icon-2015-mr-robot-256x256-thumbnail.png"
     }
   ],
