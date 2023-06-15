@@ -25,7 +25,7 @@ export const CommentList = memo(({ className, comments, isLoading }: CommentList
   }
 
   return (
-    <VStack gap='16' className={classNames('', {}, [className]) }> 
+    <VStack gap='16' max className={classNames('', {}, [className]) }> 
       { comments?.length 
         ? comments.map(comment => (
           <CommentCard 
