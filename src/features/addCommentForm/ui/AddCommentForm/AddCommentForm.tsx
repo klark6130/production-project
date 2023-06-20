@@ -28,7 +28,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
 
   const dispatch = useAppDispatch();
 
-  const onCommentTextChange = useCallback((value) => {
+  const onCommentTextChange = useCallback((value: string) => {
     dispatch(addCommentFormActions.setText(value))
   }, [dispatch]);
 

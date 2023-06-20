@@ -77,9 +77,8 @@ export const ArticleList = memo(({ className, articles, view = ArticleView.TILE,
       onScroll={() => console.log('scroll')}
       scrollElement={document.getElementById(PAGE_ID) as Element}
     >
-      {({ height, width, registerChild, onChildScroll, isScrolling, scrollTop }) => (
+      {({ height, width, onChildScroll, isScrolling, scrollTop }) => (
         <div 
-          ref={registerChild}
           className={classNames(cls.ArticleList, {}, [className, cls[view]]) }
         >
           {virtualized

@@ -26,7 +26,7 @@ export const ArticleRecommendationsList = memo(({ className }: ArticleRecommenda
   }
 
   if (error) {
-    return <VStack>{error}</VStack>;
+    return <VStack>{error as string}</VStack>;
   }
 
   return (

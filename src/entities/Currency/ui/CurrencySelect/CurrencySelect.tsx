@@ -21,7 +21,7 @@ const options = [
 export const CurrencySelect = memo(({ className, value, onChange, readonly }: CurrencySelectProps) => {
   const { t } = useTranslation();
 
-  const onChangeHandler = useCallback((value) => {
+  const onChangeHandler = useCallback((value: string) => {
     if (onChange) {
       onChange(value as Currency)
     }
