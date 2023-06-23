@@ -1,4 +1,4 @@
-export { ArticleView, ArticleSortField, ArticleType } from './model/types/article';
+export { ArticleView, ArticleSortField, ArticleType } from './model/consts/articleConsts';
 
 export {
   ArticleDetails 

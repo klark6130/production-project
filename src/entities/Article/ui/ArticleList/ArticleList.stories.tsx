@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleList } from './ArticleList';
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/articleConsts';
 
 export default {
   title: 'entities/Article/ArticleList',
