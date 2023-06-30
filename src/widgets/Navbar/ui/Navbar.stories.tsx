@@ -6,13 +6,15 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import { Navbar } from './Navbar';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import withMock from 'storybook-addon-mock';
 
 export default {
   title: 'widget/Navbar',
   component: Navbar,
   argTypes: {
     backgroundColor: { control: 'color' }
-  }
+  },
+  decorators: [withMock]
 } as ComponentMeta<typeof Navbar>;
 
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
@@ -40,3 +42,25 @@ AuthUser.args = {
 AuthUser.decorators = [StoreDecorator({
   user: { authData: {} }
 })]
+
+AuthUser.parameters = {
+  mockData: [
+    {
+      url: __API__ + '/notifications',
+      method: 'GET',
+      status: 200,
+      response: [
+        {
+          id: '1',
+          title: 'title',
+          description: 'description'
+        },
+        {
+          id: '2',
+          title: 'title 2',
+          description: 'description 2'
+        }
+      ]
+    }
+  ]
+};

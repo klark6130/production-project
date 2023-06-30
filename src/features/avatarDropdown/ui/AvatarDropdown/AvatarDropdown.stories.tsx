@@ -6,7 +6,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import { AvatarDropdown } from './AvatarDropdown';
 
 export default {
-  title: 'pages/AvatarDropdown',
+  title: 'features/AvatarDropdown',
   component: AvatarDropdown,
   argTypes: {
     backgroundColor: { control: 'color' }
@@ -18,4 +18,6 @@ const Template: ComponentStory<typeof AvatarDropdown> = (args: any) => <AvatarDr
 export const Normal = Template.bind({});
 Normal.args = {
 };
-Normal.decorators = []
+Normal.decorators = [
+  StoreDecorator({})
+]
