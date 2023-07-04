@@ -5,6 +5,8 @@ import { useModal } from 'shared/lib/hooks/useModal';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
+import { useDrag } from '@use-gesture/react'
+import { a, useSpring, config } from '@react-spring/web'
 
 interface ModalProps {
   className?: string
