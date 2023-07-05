@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import { BuildPaths } from '../build/types/config';
 import path from 'path';
@@ -16,6 +17,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
  
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
+  config.resolve!.alias = { '@': paths.src }
 
   if (config.module) {
     config.module.rules = config.module?.rules?.map((rule: RuleSetRule | '...') => {
