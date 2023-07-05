@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
 import cls from './ArticleEditPage.module.scss';
-import { Page } from 'widgets/Page/Page';
+import { Page } from '@/widgets/Page/Page';
 import { useParams } from 'react-router-dom';
 
 interface ArticleEditPageProps {

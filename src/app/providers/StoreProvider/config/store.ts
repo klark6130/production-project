@@ -1,13 +1,13 @@
 import { CombinedState, configureStore, getDefaultMiddleware, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
-import { counterReducer } from 'entities/Counter';
-import { userReducer } from 'entities/User';
+import { counterReducer } from '@/entities/Counter';
+import { userReducer } from '@/entities/User';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 import { useDispatch } from 'react-redux';
-import { $api } from 'shared/api/api';
+import { $api } from '@/shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
-import { uiReducer } from 'features/UI';
-import { rtkApi } from 'shared/api/rtkApi';
+import { uiReducer } from '@/features/UI';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export function createReduxStore (
   initialState?: StateSchema, 

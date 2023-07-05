@@ -1,12 +1,12 @@
 /* eslint-disable i18next/no-literal-string */
 
-import { ArticleList } from 'entities/Article';
+import { ArticleList } from '@/entities/Article';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { VStack } from 'shared/ui/Stack';
-import { Text, TextSize } from 'shared/ui/Text/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
 
 interface ArticleRecommendationsListProps {
   className?: string
@@ -37,7 +37,6 @@ export const ArticleRecommendationsList = memo(({ className }: ArticleRecommenda
       <ArticleList 
         articles={articles}
         target='_blank'
-        virtualized={false}
       />
     </VStack> 
   )

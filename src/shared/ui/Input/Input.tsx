@@ -1,5 +1,5 @@
 import { InputHTMLAttributes, memo, useEffect, useRef } from 'react';
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
 // исключение полей интерфейса при расширении!!!
