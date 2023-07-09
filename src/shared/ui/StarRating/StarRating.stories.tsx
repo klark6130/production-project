@@ -3,17 +3,17 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { [FTName] } from './[FTName]';
+import { StarRating } from './StarRating';
 
 export default {
-  title: 'pages/[FTName]',
-  component: [FTName],
+  title: 'shared/StarRating',
+  component: StarRating,
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as ComponentMeta<typeof [FTName]>;
+} as ComponentMeta<typeof StarRating>;
 
-const Template: ComponentStory<typeof [FTName]> = (args: any) => <[FTName] {...args} />;
+const Template: ComponentStory<typeof StarRating> = (args: any) => <StarRating {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
