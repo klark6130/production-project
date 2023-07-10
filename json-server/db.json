@@ -708,5 +708,76 @@
       "username": "admin_second_1",
       "avatar": "https://e1.pngegg.com/pngimages/356/954/png-clipart-mr-robot-tv-series-folder-icon-2015-mr-robot-256x256-thumbnail.png"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошо",
+      "userId": 1,
+      "articleId": 1
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошо",
+      "userId": 1,
+      "articleId": 2
+    },
+    {
+      "arg": {
+        "articleId": "3",
+        "rate": 3,
+        "userId": "1",
+        "feedback": "help"
+      },
+      "id": "aAOWAHu"
+    },
+    {
+      "arg": {
+        "articleId": "9",
+        "rate": 5,
+        "userId": "1",
+        "feedback": "dsfd"
+      },
+      "id": "X9BzljA"
+    },
+    {
+      "articleId": "3",
+      "rate": 5,
+      "userId": "1",
+      "feedback": "help",
+      "id": "bYlu2m2"
+    },
+    {
+      "articleId": "9",
+      "rate": 3,
+      "userId": "1",
+      "feedback": "пуре",
+      "id": "tALFEKj"
+    },
+    {
+      "articleId": "7",
+      "rate": 3,
+      "userId": "1",
+      "feedback": "best",
+      "id": "hCvSdGD"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошо",
+      "userId": 1,
+      "profileId": 1
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошо",
+      "userId": 1,
+      "profileId": 2
+    }
   ]
 }
