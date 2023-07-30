@@ -46,7 +46,7 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
     "react-hooks/exhaustive-deps": "error", // Проверяем зависимости эффекта
     "no-undef": "off",
-    'bastrikov-da-eslint-plugin/path-checker': 'error'
+    'bastrikov-da-eslint-plugin/path-checker': ['error', { alias: '@' }]
   },
   globals: {
     __IS_DEV__: true,
