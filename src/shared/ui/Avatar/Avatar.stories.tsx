@@ -6,7 +6,7 @@ import { Avatar } from './Avatar';
 import AvatarImg from './for_storybook.png';
 
 export default {
-  title: 'widget/Avatar',
+  title: 'shared/Avatar',
   component: Avatar,
   argTypes: {
     backgroundColor: { control: 'color' }

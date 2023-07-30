@@ -49,3 +49,30 @@ Normal.decorators = [
     }
   })
 ]
+
+export const withoutRate = Template.bind({});
+withoutRate.args = {
+  articleId: '1'
+};
+
+withoutRate.parameters = {
+  mockData: [
+    {
+      url: __API__ + '/article-ratings?articleId=1&userId=1',
+      method: 'GET',
+      status: 200,
+      response: []
+    }
+  ]
+}
+
+withoutRate.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+        username: 'admin'
+      }
+    }
+  })
+]

@@ -9,7 +9,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import withMock from 'storybook-addon-mock';
 
 export default {
-  title: 'widget/Navbar',
+  title: 'widgets/Navbar',
   component: Navbar,
   argTypes: {
     backgroundColor: { control: 'color' }

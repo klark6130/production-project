@@ -7,7 +7,7 @@ import { AppLink, AppLinkTheme } from './AppLink';
 import { Theme } from '@/app/providers/ThemeProvider';
 
 export default {
-  title: 'widget/AppLink',
+  title: 'shared/AppLink',
   component: AppLink,
   argTypes: {
     backgroundColor: { control: 'color' }
