@@ -1,1 +1,1 @@
-export const ErrorPage = '';
+export { ErrorPage } from './ui/ErrorPage'

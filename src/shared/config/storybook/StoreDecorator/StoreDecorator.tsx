@@ -1,4 +1,5 @@
-/* eslint-disable react/display-name */
+/* eslint-disable bastrikov-da-eslint-plugin/public-api-imports */
+// TODO 
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';

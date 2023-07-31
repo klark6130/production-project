@@ -10,7 +10,7 @@ import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
-import { LangSwitcher } from '@/widgets/LangSwitcher/LangSwitcher';
+import { LangSwitcher } from '@/widgets/LangSwitcher';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 
 interface SidebarProps {
