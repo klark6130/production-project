@@ -660,6 +660,12 @@
       "userId": "1",
       "text": "MY new comment from my new keyboard",
       "id": "0TDaPDy"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "xd",
+      "id": "jVIp8xl"
     }
   ],
   "users": [
@@ -696,7 +702,7 @@
       "id": "1",
       "first": "jghwer3333",
       "lastname": "Bastrikov",
-      "age": 78,
+      "age": 52,
       "currency": "EUR",
       "country": "Belarus",
       "city": "Moscow",
