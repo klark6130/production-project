@@ -47,7 +47,13 @@ module.exports = {
     "react-hooks/exhaustive-deps": "error", // Проверяем зависимости эффекта
     "no-undef": "off",
     'bastrikov-da-eslint-plugin/path-checker': ['error', { alias: '@' }],
-    'bastrikov-da-eslint-plugin/public-api-imports': ['error', { alias: '@'}]
+    'bastrikov-da-eslint-plugin/public-api-imports': [
+      'error', 
+      { 
+        alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
+      }
+    ]
   },
   globals: {
     __IS_DEV__: true,
