@@ -1,3 +1,4 @@
+/* eslint-disable bastrikov-da-eslint-plugin/layer-imports */
 import { Story } from '@storybook/react';
 import '@/app/styles/index.scss';
 import { BrowserRouter } from 'react-router-dom';

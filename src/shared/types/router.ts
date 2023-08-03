@@ -1,3 +1,4 @@
+// eslint-disable-next-line bastrikov-da-eslint-plugin/layer-imports
 import { UserRole } from '@/entities/User'
 import { RouteProps } from 'react-router-dom'
 
