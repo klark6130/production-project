@@ -1,4 +1,4 @@
-import { Fragment, ReactNode, useState } from 'react'
+import { Fragment, ReactNode } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 import cls from './ListBox.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';

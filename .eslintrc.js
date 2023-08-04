@@ -15,7 +15,9 @@ module.exports = {
     'react', 
     'i18next',
     'react-hooks',
-    'bastrikov-da-eslint-plugin'
+    'bastrikov-da-eslint-plugin',
+    'unused-imports',
+    // 'eslint-plugin-import' - В БУДУЩЕМ ОЧЕНЬ МОЖЕТ ПРИГОДИТЬСЯ!!!!
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -25,6 +27,7 @@ module.exports = {
     'no-trailing-spaces': 'off',
     'import/no-unresolved': 'off',
     "semi": "off",
+    "unused-imports/no-unused-imports": "off", // вроде бы полезный плагин, но ведь есть tree shaking
     "eol-last": ["off"],
     "@typescript-eslint/semi": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
