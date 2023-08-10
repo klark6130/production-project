@@ -46,7 +46,6 @@ export interface FlexProps extends DivProps {
 } 
 
 export const Flex = ({ className, children, align = 'center', direction = 'row', justify = 'start', gap, max }: FlexProps) => {
-  const { t } = useTranslation();
 
   const classes = [
     className,

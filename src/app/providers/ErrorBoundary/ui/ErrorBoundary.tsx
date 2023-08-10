@@ -1,6 +1,5 @@
-import React, { ErrorInfo, ReactNode, Suspense } from 'react';
-import { withTranslation } from 'react-i18next';
 import { ErrorPage } from '@/widgets/ErrorPage';
+import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 
 interface ErrorBoundaryProps {
   children: ReactNode

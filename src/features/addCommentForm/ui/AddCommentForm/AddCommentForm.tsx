@@ -10,6 +10,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 export interface AddCommentFormProps {
   className?: string
@@ -36,6 +37,10 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
     onSendComment(text || '');
     onCommentTextChange('');
   }, [onCommentTextChange, onSendComment, text])
+
+  if (error) {
+    return <Text title='Error' text='error'/>
+  }
 
   return (
     <DynamicModuleLoader reducers={reducers} >

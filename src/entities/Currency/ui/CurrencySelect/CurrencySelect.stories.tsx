@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/consistent-type-assertions */
-import React from 'react';
-import { ComponentStory, ComponentMeta, addDecorator } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { CurrencySelect } from './CurrencySelect';
-import { Currency } from '../../model/types/currency';
 
 export default {
   title: 'entities/CurrencySelect',

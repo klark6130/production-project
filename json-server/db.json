@@ -666,6 +666,12 @@
       "userId": "1",
       "text": "xd",
       "id": "jVIp8xl"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "sd",
+      "id": "v_XG559"
     }
   ],
   "users": [
@@ -702,7 +708,7 @@
       "id": "1",
       "first": "jghwer3333",
       "lastname": "Bastrikov",
-      "age": 52,
+      "age": 32,
       "currency": "EUR",
       "country": "Belarus",
       "city": "Moscow",
