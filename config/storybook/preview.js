@@ -22,6 +22,9 @@ export const parameters = {
       { name: 'dark', class: Theme.DARK, color: '#000000' },
       { name: 'orange', class: Theme.ORANGE, color: '#ffb005' }
     ],
+    // Для того чтобы выбранная тема применялась к каждому компоненту Сторибук. Нужно в preview.js :
+    // 1) Выключить ThemeDecorator
+    // 2) Навесть дополнительно 'app' класс в списке тем 
   },
 }
 
