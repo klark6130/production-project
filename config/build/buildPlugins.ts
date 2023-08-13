@@ -9,24 +9,16 @@ import CirculartDependencyPlugin from 'circular-dependency-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 export function buildPlugins ({ paths, isDev, apiUrl, project }: BuildOptions): webpack.WebpackPluginInstance[] {
+  const isProd = !isDev;
   const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html
     }),
     new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash].css',
-      chunkFilename: 'css/[name].[contenthash].css'
-    }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project)
-    }),
-    new CopyPlugin({
-      patterns: [
-        { from: paths.locales, to: paths.buildLocales }
-      ]
     }),
     new CirculartDependencyPlugin({
       exclude: /node_modules/,
@@ -51,6 +43,23 @@ export function buildPlugins ({ paths, isDev, apiUrl, project }: BuildOptions): 
     // plugins.push(new BundleAnalyzerPlugin({
     //   openAnalyzer: true
     // }))
+  }
+
+  if (isProd) {
+    plugins.push(
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash].css',
+        chunkFilename: 'css/[name].[contenthash].css'
+      })
+    )
+
+    plugins.push(
+      new CopyPlugin({
+        patterns: [
+          { from: paths.locales, to: paths.buildLocales }
+        ]
+      })
+    )
   }
 
   return plugins;
