@@ -6,7 +6,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 export default {
-  title: 'entities/Article/ArticleTypeTabs',
+  title: 'features/ArticleTypeTabs/ArticleTypeTabs',
   component: ArticleTypeTabs,
   argTypes: {
     backgroundColor: { control: 'color' }

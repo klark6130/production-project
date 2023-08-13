@@ -5,7 +5,7 @@ module.exports = (layer, sliceName) => {
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ${firstUpper(sliceName)}Component } from './${firstUpper(sliceName)}';
 
 export default {

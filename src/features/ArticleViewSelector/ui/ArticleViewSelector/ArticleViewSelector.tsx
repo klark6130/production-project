@@ -4,8 +4,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
 import { memo } from 'react';
-import { ArticleView } from '../../model//consts/articleConsts';
 import cls from './ArticleViewSelector.module.scss';
+import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
   className?: string
