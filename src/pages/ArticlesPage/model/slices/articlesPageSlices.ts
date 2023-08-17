@@ -6,7 +6,7 @@ import {
 import { StateSchema } from '@/app/providers/StoreProvider'
 import { Article, ArticleSortField, ArticleType, ArticleView } from '@/entities/Article'
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localtorage'
-import { SortOrder } from '@/shared/types'
+import { SortOrder } from '@/shared/types/sort'
 import { fetchArticlesList } from '../services/fetchArticlesList'
 import { ArticlesPageSchema } from '../types/articlesPageSchema'
 

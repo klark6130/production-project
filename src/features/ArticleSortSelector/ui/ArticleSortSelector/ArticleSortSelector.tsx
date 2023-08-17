@@ -1,6 +1,6 @@
 import { ArticleSortField } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { Select, SelectOption } from '@/shared/ui/Select';
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';

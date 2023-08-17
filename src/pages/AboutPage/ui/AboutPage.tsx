@@ -5,7 +5,7 @@ import { Page } from '@/widgets/Page';
 const AboutPage = memo(() => {
   const { t } = useTranslation('about'); // перевод согласно чанку (about.json в public/locales)
   return (
-    <Page>
+    <Page data-testid={'AboutePage'}>
       { t('О сайте')}
     </Page>
   )
