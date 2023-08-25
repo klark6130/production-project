@@ -5,7 +5,6 @@ import { ComponentStory, ComponentMeta, addDecorator } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Navbar } from './Navbar';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import withMock from 'storybook-addon-mock';
 import { Theme } from '@/shared/const/theme';
 
 export default {
@@ -13,8 +12,7 @@ export default {
   component: Navbar,
   argTypes: {
     backgroundColor: { control: 'color' }
-  },
-  decorators: [withMock]
+  }
 } as ComponentMeta<typeof Navbar>;
 
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
