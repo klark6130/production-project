@@ -14,7 +14,8 @@
     "strict": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["jest", "node"]
   },
   "ts-node": {
     "compilerOptions": {
@@ -31,4 +32,7 @@
     "./scripts/*.js",
     "./scripts/**/*.js",
   ],
+  "exclude": [
+    // "./cypress.config.ts",
+  ]
 }

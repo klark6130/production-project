@@ -701,6 +701,15 @@
         "MANAGER"
       ],
       "avatar": "https://e1.pngegg.com/pngimages/356/954/png-clipart-mr-robot-tv-series-folder-icon-2015-mr-robot-256x256-thumbnail.png"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://e1.pngegg.com/pngimages/356/954/png-clipart-mr-robot-tv-series-folder-icon-2015-mr-robot-256x256-thumbnail.png"
     }
   ],
   "profile": [
