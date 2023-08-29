@@ -15,5 +15,16 @@ Cypress.Commands.addAll(profileCommands);
 Cypress.Commands.addAll(articleCommands);
 Cypress.Commands.addAll(commentCommands);
 Cypress.Commands.addAll(ratingCommands);
+// Cypress.Commands.overwrite('intercept', () => {
+//   const FIXTURE_MODE = process.env.FIXTURE_MODE;
+//   if(FIXTURE_MODE === 'READ'){
+//     readFixttures(fileName)
+//     // считывание fixtures из папки fixtures
+//   }
+//   if(FIXTURE_MODE === 'WRITE'){
+//     // const fixtureName = req.Method + req.url + hash (req.body);
+//     // createFIXTURES(fixtureName)
+//   }
+// })
 
 export {};

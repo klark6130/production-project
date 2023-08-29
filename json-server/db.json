@@ -583,6 +583,19 @@
       ],
       "blocks": [],
       "id": "_skuJHc"
+    },
+    {
+      "title": "Testing ARTICLE",
+      "subtitle": "Экономика",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "ECONOMICS"
+      ],
+      "blocks": [],
+      "id": "expKKgm"
     }
   ],
   "comments": [
@@ -852,6 +865,13 @@
       "userId": "1",
       "feedback": "Да всё прекрасно как никогда",
       "id": "PORfAQU"
+    },
+    {
+      "articleId": "expKKgm",
+      "rate": 4,
+      "userId": "4",
+      "feedback": "some feedback",
+      "id": "UlKdicW"
     }
   ],
   "profile-ratings": [
