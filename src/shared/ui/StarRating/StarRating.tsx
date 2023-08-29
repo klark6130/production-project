@@ -52,6 +52,8 @@ export const StarRating = memo(({ className, onSelect, selectedStars = 0, size =
           onMouseLeave={onLeave}
           onMouseEnter={onHover(starNumber)}
           onClick={onClick(starNumber)}
+          data-testid={`StarRating.${starNumber}`}
+          data-selected={currentStarsCount >= starNumber}
         />
       ))}
     </div>

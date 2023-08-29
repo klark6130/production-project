@@ -38,6 +38,7 @@ export const ArticleList = memo(({ className, articles, view = ArticleView.TILE,
   return (
     <div 
       className={classNames(cls.ArticleList, {}, [className, cls[view]]) }
+      data-testid={'ArticleList'}
     >
 
       {

@@ -544,6 +544,45 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Testing ARTICLE",
+      "subtitle": "Экономика",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "ECONOMICS"
+      ],
+      "blocks": [],
+      "id": "RAvMDmY"
+    },
+    {
+      "title": "Testing ARTICLE",
+      "subtitle": "Экономика",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "ECONOMICS"
+      ],
+      "blocks": [],
+      "id": "q038tWz"
+    },
+    {
+      "title": "Testing ARTICLE",
+      "subtitle": "Экономика",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "ECONOMICS"
+      ],
+      "blocks": [],
+      "id": "_skuJHc"
     }
   ],
   "comments": [
@@ -672,6 +711,12 @@
       "userId": "1",
       "text": "sd",
       "id": "v_XG559"
+    },
+    {
+      "articleId": "RAvMDmY",
+      "userId": "4",
+      "text": "text",
+      "id": "ANFp819"
     }
   ],
   "users": [
@@ -733,6 +778,17 @@
       "country": "Russia",
       "city": "Moscow",
       "username": "admin_second_1",
+      "avatar": "https://e1.pngegg.com/pngimages/356/954/png-clipart-mr-robot-tv-series-folder-icon-2015-mr-robot-256x256-thumbnail.png"
+    },
+    {
+      "id": "4",
+      "first": "Test",
+      "lastname": "user",
+      "age": 36,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "testuser",
       "avatar": "https://e1.pngegg.com/pngimages/356/954/png-clipart-mr-robot-tv-series-folder-icon-2015-mr-robot-256x256-thumbnail.png"
     }
   ],

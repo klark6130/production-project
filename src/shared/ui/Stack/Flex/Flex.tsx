@@ -45,7 +45,7 @@ export interface FlexProps extends DivProps {
   max?: boolean
 } 
 
-export const Flex = ({ className, children, align = 'center', direction = 'row', justify = 'start', gap, max }: FlexProps) => {
+export const Flex = ({ className, children, align = 'center', direction = 'row', justify = 'start', gap, max, ...otherProps }: FlexProps) => {
 
   const classes = [
     className,
@@ -60,7 +60,10 @@ export const Flex = ({ className, children, align = 'center', direction = 'row',
   }
 
   return (
-    <div className={classNames(cls.Flex, mods, classes) }>
+    <div 
+      className={classNames(cls.Flex, mods, classes) } 
+      {...otherProps}
+    >
       {children}
     </div>
   )
