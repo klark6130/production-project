@@ -24,7 +24,6 @@
   },
   // In tsconfig.json
   "include": [
-    "./*.ts",
     "./config/**/*.ts",
     "./config/**/*.tsx",
     "./src/**/*.ts",
@@ -33,6 +32,7 @@
     "./scripts/**/*.js",
   ],
   "exclude": [
-    "./cypress.config.ts",
+    // "cypress",
+    //"./cypress.config.ts",
   ]
 }

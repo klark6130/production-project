@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference types="cypress" />
 // https://on.cypress.io/custom-commands
@@ -15,6 +14,12 @@ Cypress.Commands.addAll(profileCommands);
 Cypress.Commands.addAll(articleCommands);
 Cypress.Commands.addAll(commentCommands);
 Cypress.Commands.addAll(ratingCommands);
+
+// 
+// авто считывание данных для фикстур
+// Cypress.Commands.overwrite('mount') // для теста компонентов
+
+// авто считывание данных для фикстур
 // Cypress.Commands.overwrite('intercept', () => {
 //   const FIXTURE_MODE = process.env.FIXTURE_MODE;
 //   if(FIXTURE_MODE === 'READ'){

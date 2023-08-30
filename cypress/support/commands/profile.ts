@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
 import { User } from '../../../src/entities/User';
 
 export const updateProfile = (firstname: string, lastname: string) => {

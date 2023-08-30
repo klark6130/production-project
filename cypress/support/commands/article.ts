@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-namespace */
 import { Article } from '../../../src/entities/Article';
-import { User } from '../../../src/entities/User';
 
 const defaultArticle = {
   title: 'Testing ARTICLE',

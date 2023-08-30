@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-namespace */
+import { User } from '../../../src/entities/User';
 import { USER_LOCALSTORAGE_KEY } from '../../../src/shared/const/localtorage';
-import { User } from '../../../src/entities/User'
 import { selectByTestId } from '../selectByTestId';
 
 export const login = (username: string = 'testuser', password: string = '123') => {

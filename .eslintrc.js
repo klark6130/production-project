@@ -1,12 +1,16 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    jest: true
   },
   extends: ["plugin:react/recommended", "standard-with-typescript", "plugin:i18next/recommended", "plugin:storybook/recommended"],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ['tsconfig.json', './cypress/tsconfig.json']
@@ -38,6 +42,7 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "off", //
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-confusing-void-expression": "off",
+    "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-invalid-void-type": "off",
     "@typescript-eslint/indent": "off",
     "react/react-in-jsx-scope": "off",

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
 
 export const addComment = (text: string) => {
   cy.getByTestId('AddCommentForm.Input').type(text);

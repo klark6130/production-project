@@ -1,3 +1,9 @@
 .eslintrc.js
 .fttemplate/*
 scripts/*/*.*
+
+vite.config.ts
+
+webpack.config.ts
+
+cypress.config.ts
