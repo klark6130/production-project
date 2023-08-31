@@ -5,22 +5,20 @@ import { Button } from '@/shared/ui/Button';
 import { memo } from 'react';
 
 interface ErrorPageProps {
-  className?: string
+    className?: string;
 }
 
 export const ErrorPage = memo(({ className }: ErrorPageProps) => {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
-  const reloadPage = () => {
-    location.reload();
-  }
-  
-  return (
-    <div className={classNames(cls.ErrorPage, {}, [className])}>
-      <p>{t('Произошла ошибка')}</p>
-      <Button onClick={reloadPage}>
-        {t('Обновить страницу')}
-      </Button>
-    </div>
-  )
-})
+    const reloadPage = () => {
+        location.reload();
+    };
+
+    return (
+        <div className={classNames(cls.ErrorPage, {}, [className])}>
+            <p>{t('Произошла ошибка')}</p>
+            <Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
+        </div>
+    );
+});

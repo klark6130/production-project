@@ -7,19 +7,19 @@ import AddCommentForm from './AddCommentForm';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'pages/AddCommentForm',
-  component: AddCommentForm,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'pages/AddCommentForm',
+    component: AddCommentForm,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof AddCommentForm>;
 
-const Template: ComponentStory<typeof AddCommentForm> = (args: any) => <AddCommentForm {...args} />;
+const Template: ComponentStory<typeof AddCommentForm> = (args: any) => (
+    <AddCommentForm {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
-  onSendComment: action('onSendComment')
+    onSendComment: action('onSendComment'),
 };
-Normal.decorators = [
-  StoreDecorator({})
-]
+Normal.decorators = [StoreDecorator({})];

@@ -6,16 +6,17 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Popover } from './Popover';
 
 export default {
-  title: 'pages/Popover',
-  component: Popover,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'pages/Popover',
+    component: Popover,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof Popover>;
 
-const Template: ComponentStory<typeof Popover> = (args: any) => <Popover {...args} />;
+const Template: ComponentStory<typeof Popover> = (args: any) => (
+    <Popover {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-};
-Normal.decorators = []
+Normal.args = {};
+Normal.decorators = [];

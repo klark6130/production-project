@@ -6,16 +6,17 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { StarRating } from './StarRating';
 
 export default {
-  title: 'shared/StarRating',
-  component: StarRating,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'shared/StarRating',
+    component: StarRating,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof StarRating>;
 
-const Template: ComponentStory<typeof StarRating> = (args: any) => <StarRating {...args} />;
+const Template: ComponentStory<typeof StarRating> = (args: any) => (
+    <StarRating {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-};
-Normal.decorators = []
+Normal.args = {};
+Normal.decorators = [];

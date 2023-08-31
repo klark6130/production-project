@@ -5,18 +5,17 @@ import ArticleEditPage from './ArticleEditPage';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: 'pages/ArticleEditPage',
-  component: ArticleEditPage,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'pages/ArticleEditPage',
+    component: ArticleEditPage,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof ArticleEditPage>;
 
-const Template: ComponentStory<typeof ArticleEditPage> = (args: any) => <ArticleEditPage {...args} />;
+const Template: ComponentStory<typeof ArticleEditPage> = (args: any) => (
+    <ArticleEditPage {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-};
-Normal.decorators = [
-  StoreDecorator({})
-]
+Normal.args = {};
+Normal.decorators = [StoreDecorator({})];

@@ -3,14 +3,14 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const MainPage = memo(() => {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
-  return (
-    <Page data-testid={'MainPage'}>
-      { t('Главная страница')}
-      {/* <Counter/> */}
-    </Page>
-  )
-})
+    return (
+        <Page data-testid={'MainPage'}>
+            {t('Главная страница')}
+            {/* <Counter/> */}
+        </Page>
+    );
+});
 
-export default MainPage
+export default MainPage;

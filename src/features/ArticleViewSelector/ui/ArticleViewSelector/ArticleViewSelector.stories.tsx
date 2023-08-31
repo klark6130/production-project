@@ -6,16 +6,17 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ArticleViewSelector } from './ArticleViewSelector';
 
 export default {
-  title: 'features/ArticleViewSelector/ArticleViewSelector',
-  component: ArticleViewSelector,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'features/ArticleViewSelector/ArticleViewSelector',
+    component: ArticleViewSelector,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof ArticleViewSelector>;
 
-const Template: ComponentStory<typeof ArticleViewSelector> = (args: any) => <ArticleViewSelector {...args} />;
+const Template: ComponentStory<typeof ArticleViewSelector> = (args: any) => (
+    <ArticleViewSelector {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-};
-Normal.decorators = []
+Normal.args = {};
+Normal.decorators = [];

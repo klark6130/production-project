@@ -15,7 +15,7 @@ Cypress.Commands.addAll(articleCommands);
 Cypress.Commands.addAll(commentCommands);
 Cypress.Commands.addAll(ratingCommands);
 
-// 
+//
 // авто считывание данных для фикстур
 // Cypress.Commands.overwrite('mount') // для теста компонентов
 

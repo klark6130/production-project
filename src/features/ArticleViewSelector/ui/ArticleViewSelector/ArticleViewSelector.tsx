@@ -8,41 +8,47 @@ import cls from './ArticleViewSelector.module.scss';
 import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
-  className?: string
-  view: ArticleView
-  onViewClick?: (view: ArticleView) => void
-} 
+    className?: string;
+    view: ArticleView;
+    onViewClick?: (view: ArticleView) => void;
+}
 
 const viewTypes = [
-  {
-    view: ArticleView.LIST,
-    icon: ListIcon
-  },
-  {
-    view: ArticleView.TILE,
-    icon: TileIcon
-  }
-]
+    {
+        view: ArticleView.LIST,
+        icon: ListIcon,
+    },
+    {
+        view: ArticleView.TILE,
+        icon: TileIcon,
+    },
+];
 
-export const ArticleViewSelector = memo(({ className, view, onViewClick }: ArticleViewSelectorProps) => {
+export const ArticleViewSelector = memo(
+    ({ className, view, onViewClick }: ArticleViewSelectorProps) => {
+        const onClick = (newView: ArticleView) => () => {
+            onViewClick?.(newView);
+        };
 
-  const onClick = (newView: ArticleView) => () => {
-    onViewClick?.(newView);
-  }
-
-  return (
-    <div className={classNames(cls.ArticleViewSelector, {}, [className]) }>
-      {viewTypes.map(viewType => (
-        <Button 
-          key={viewType.view}
-          theme={ButtonTheme.CLEAR} 
-          onClick={onClick(viewType.view)}
-        >
-          <Icon 
-            Svg={viewType.icon} 
-            className={classNames('', { [cls.notSelected]: viewType.view !== view })}/>
-        </Button>
-      ))}
-    </div>
-  )
-});
+        return (
+            <div
+                className={classNames(cls.ArticleViewSelector, {}, [className])}
+            >
+                {viewTypes.map((viewType) => (
+                    <Button
+                        key={viewType.view}
+                        theme={ButtonTheme.CLEAR}
+                        onClick={onClick(viewType.view)}
+                    >
+                        <Icon
+                            Svg={viewType.icon}
+                            className={classNames('', {
+                                [cls.notSelected]: viewType.view !== view,
+                            })}
+                        />
+                    </Button>
+                ))}
+            </div>
+        );
+    },
+);

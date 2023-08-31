@@ -6,16 +6,17 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 export default {
-  title: 'features/ArticleSortSelector/ArticleSortSelector',
-  component: ArticleSortSelector,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'features/ArticleSortSelector/ArticleSortSelector',
+    component: ArticleSortSelector,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof ArticleSortSelector>;
 
-const Template: ComponentStory<typeof ArticleSortSelector> = (args: any) => <ArticleSortSelector {...args} />;
+const Template: ComponentStory<typeof ArticleSortSelector> = (args: any) => (
+    <ArticleSortSelector {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-};
-Normal.decorators = []
+Normal.args = {};
+Normal.decorators = [];

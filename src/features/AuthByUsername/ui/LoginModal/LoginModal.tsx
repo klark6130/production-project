@@ -6,22 +6,23 @@ import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 import { Loader } from '@/shared/ui/Loader';
 
 interface LoginModalProps {
-  className?: string
-  isOpen: boolean
-  onClose: () => void
-
-} 
-export const LoginModal = memo(({ className, isOpen, onClose }: LoginModalProps) => {
-  return (
-    <Modal 
-      className={classNames(cls.LoginModal, {}, [className])}
-      isOpen = {isOpen}
-      onClose = {onClose}
-      lazy = {true}
-    >  
-      <Suspense fallback={<Loader/>}>
-        <LoginFormAsync onSuccess={onClose}/>
-      </Suspense>
-    </Modal>
-  )
-})
+    className?: string;
+    isOpen: boolean;
+    onClose: () => void;
+}
+export const LoginModal = memo(
+    ({ className, isOpen, onClose }: LoginModalProps) => {
+        return (
+            <Modal
+                className={classNames(cls.LoginModal, {}, [className])}
+                isOpen={isOpen}
+                onClose={onClose}
+                lazy={true}
+            >
+                <Suspense fallback={<Loader />}>
+                    <LoginFormAsync onSuccess={onClose} />
+                </Suspense>
+            </Modal>
+        );
+    },
+);

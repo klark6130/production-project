@@ -5,37 +5,37 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { NotificationList } from './NotificationList';
 
 export default {
-  title: 'entities/Notification/NotificationList',
-  component: NotificationList,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'entities/Notification/NotificationList',
+    component: NotificationList,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof NotificationList>;
 
-const Template: ComponentStory<typeof NotificationList> = (args: any) => <NotificationList {...args} />;
+const Template: ComponentStory<typeof NotificationList> = (args: any) => (
+    <NotificationList {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.parameters = {
-  mockData: [
-    {
-      url: __API__ + '/notifications',
-      method: 'GET',
-      status: 200,
-      response: [
+    mockData: [
         {
-          id: '1',
-          title: 'title',
-          description: 'description'
+            url: __API__ + '/notifications',
+            method: 'GET',
+            status: 200,
+            response: [
+                {
+                    id: '1',
+                    title: 'title',
+                    description: 'description',
+                },
+                {
+                    id: '2',
+                    title: 'title 2',
+                    description: 'description 2',
+                },
+            ],
         },
-        {
-          id: '2',
-          title: 'title 2',
-          description: 'description 2'
-        }
-      ]
-    }
-  ]
+    ],
 };
-Normal.decorators = [
-  StoreDecorator({})
-]
+Normal.decorators = [StoreDecorator({})];

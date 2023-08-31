@@ -7,19 +7,21 @@ import { ArticleList } from './ArticleList';
 import { ArticleView } from '../../model/consts/articleConsts';
 
 export default {
-  title: 'entities/Article/ArticleList',
-  component: ArticleList,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'entities/Article/ArticleList',
+    component: ArticleList,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args: any) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args: any) => (
+    <ArticleList {...args} />
+);
 
 export const isLoading = Template.bind({});
 isLoading.args = {
-  isLoading: true,
-  articles: [],
-  view: ArticleView.LIST
+    isLoading: true,
+    articles: [],
+    view: ArticleView.LIST,
 };
-isLoading.decorators = []
+isLoading.decorators = [];

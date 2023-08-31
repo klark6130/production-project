@@ -3,12 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page';
 
 const AdminPanelPage = memo(() => {
-  const { t } = useTranslation('admin'); // перевод согласно чанку (about.json в public/locales)
-  return (
-    <Page data-testid={'AdminPanelPage'}>
-      { t('Admin панель')}
-    </Page>
-  )
-})
+    const { t } = useTranslation('admin'); // перевод согласно чанку (about.json в public/locales)
+    return <Page data-testid={'AdminPanelPage'}>{t('Admin панель')}</Page>;
+});
 
-export default AdminPanelPage
+export default AdminPanelPage;

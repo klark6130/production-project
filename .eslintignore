@@ -1,6 +1,7 @@
 .eslintrc.js
 .fttemplate/*
 scripts/*/*.*
+.fttemplates/*/*.*
 
 vite.config.ts
 

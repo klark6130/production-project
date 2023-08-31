@@ -4,7 +4,13 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: ["plugin:react/recommended", "standard-with-typescript", "plugin:i18next/recommended", "plugin:storybook/recommended"],
+  extends: [
+    "plugin:react/recommended", 
+    "standard-with-typescript", 
+    "plugin:i18next/recommended", 
+    "plugin:storybook/recommended",
+    "prettier"
+  ],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,13 +30,9 @@ module.exports = {
     // 'eslint-plugin-import' - В БУДУЩЕМ ОЧЕНЬ МОЖЕТ ПРИГОДИТЬСЯ!!!!
   ],
   rules: {
-    'react/jsx-indent': [2, 2],
-    'react/jsx-indent-props': [2, 2],
-    'indent': [2, 2],
     'padded-blocks': ['off', 'never'],
     'no-trailing-spaces': 'off',
     'import/no-unresolved': 'off',
-    "semi": "off",
     "unused-imports/no-unused-imports": "off", // вроде бы полезный плагин, но ведь есть tree shaking
     "eol-last": ["off"],
     "@typescript-eslint/semi": "off",
@@ -68,7 +70,8 @@ module.exports = {
         alias: '@',
         testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
       }
-    ]
+    ],
+    "react/jsx-max-props-per-line": ['error', {maximum: 4}]
   },
   globals: {
     __IS_DEV__: true,

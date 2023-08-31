@@ -1,4 +1,4 @@
 // ФОрма создания статьи
 // кода
 // блоков текста
-export const ArticleEditForm = 'ArticleEditForm'
+export const ArticleEditForm = 'ArticleEditForm';

@@ -1,3 +1,3 @@
 export interface EditableProfileCard {
-  id: string
+    id: string;
 }

@@ -12,50 +12,56 @@ import cls from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
 
 interface PageProps extends TestProps {
-  className?: string
-  children: ReactNode
-  onScrollEnd?: () => void
-} 
+    className?: string;
+    children: ReactNode;
+    onScrollEnd?: () => void;
+}
 
 export const PAGE_ID = 'PAGE_ID';
 
 export const Page = memo((props: PageProps) => {
-  const { className, children, onScrollEnd } = props;
-  const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
-  const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
+    const { className, children, onScrollEnd } = props;
+    const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
+    const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
 
-  const dispatch = useAppDispatch();
-  const location = useLocation();
-  const scrollPosition = useSelector((state: StateSchema) => getUIScrollByPath(state, location.pathname))
+    const dispatch = useAppDispatch();
+    const location = useLocation();
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getUIScrollByPath(state, location.pathname),
+    );
 
-  useInfiniteScroll({
-    triggerRef,
-    wrapperRef,
-    callback: onScrollEnd
-  })
+    useInfiniteScroll({
+        triggerRef,
+        wrapperRef,
+        callback: onScrollEnd,
+    });
 
-  const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    console.log(e.currentTarget.scrollTop);
-    dispatch(uiActions.setScrollPosition({
-      position: e.currentTarget.scrollTop,
-      path: location.pathname
-    }))
-  }, 100);
+    const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
+        console.log(e.currentTarget.scrollTop);
+        dispatch(
+            uiActions.setScrollPosition({
+                position: e.currentTarget.scrollTop,
+                path: location.pathname,
+            }),
+        );
+    }, 100);
 
-  useInitialEffect(() => {
-    wrapperRef.current.scrollTop = scrollPosition;
-  })
+    useInitialEffect(() => {
+        wrapperRef.current.scrollTop = scrollPosition;
+    });
 
-  return (
-    <main 
-      ref={wrapperRef}
-      className={classNames(cls.Page, {}, [className]) }
-      onScroll={onScroll}
-      id={PAGE_ID}
-      data-testid={props['data-testid'] ?? 'Page'}
-    >
-      {children}
-      { onScrollEnd ? <div className={cls.trigger} ref={triggerRef}/> : null }
-    </main>
-  )
+    return (
+        <main
+            ref={wrapperRef}
+            className={classNames(cls.Page, {}, [className])}
+            onScroll={onScroll}
+            id={PAGE_ID}
+            data-testid={props['data-testid'] ?? 'Page'}
+        >
+            {children}
+            {onScrollEnd ? (
+                <div className={cls.trigger} ref={triggerRef} />
+            ) : null}
+        </main>
+    );
 });

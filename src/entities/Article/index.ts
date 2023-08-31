@@ -1,16 +1,15 @@
-export { ArticleBlockType, ArticleSortField, ArticleType, ArticleView } from './model/consts/articleConsts';
-
 export {
-  ArticleDetails
-} from './ui/ArticleDetails/ArticleDetails';
+    ArticleBlockType,
+    ArticleSortField,
+    ArticleType,
+    ArticleView,
+} from './model/consts/articleConsts';
 
-export type {
-  Article
-} from './model/types/article';
+export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 
-export type {
-  ArticleDetailsSchema
-} from './model/types/articleDetailsSchema';
+export type { Article } from './model/types/article';
+
+export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 
 export { getArticleDetailsData } from './model/selectors/articleDetails';
 export { ArticleList } from './ui/ArticleList/ArticleList';

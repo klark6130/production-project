@@ -4,28 +4,27 @@ import { Button } from '@/shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 
 interface BugButtonProps {
-  className?: string
-} 
+    className?: string;
+}
 
 // Компонент для тестирование багов
 export const BugButton = ({ className }: BugButtonProps) => {
-  const [error, setError] = useState(false);
-  const { t } = useTranslation();
+    const [error, setError] = useState(false);
+    const { t } = useTranslation();
 
-  const onClick = () => { setError(true); };
+    const onClick = () => {
+        setError(true);
+    };
 
-  useEffect(() => {
-    if (error) {
-      throw new Error('My custom error');
-    }
-  }, [error])
+    useEffect(() => {
+        if (error) {
+            throw new Error('My custom error');
+        }
+    }, [error]);
 
-  return (
-    <Button 
-      onClick={onClick}
-      className={classNames('', {}, [className])}
-    >
-      {t('Throw error')}
-    </Button>
-  )
-}
+    return (
+        <Button onClick={onClick} className={classNames('', {}, [className])}>
+            {t('Throw error')}
+        </Button>
+    );
+};

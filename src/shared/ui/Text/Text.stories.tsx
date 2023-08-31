@@ -7,75 +7,75 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 
 export default {
-  title: 'shared/Text',
-  component: Text,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'shared/Text',
+    component: Text,
+    // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof Text>;
 
 const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  title: 'Title',
-  text: 'some text'
+    title: 'Title',
+    text: 'some text',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  title: 'Title',
-  text: 'some text',
-  theme: TextTheme.ERROR
+    title: 'Title',
+    text: 'some text',
+    theme: TextTheme.ERROR,
 };
 
 export const onlyTitle = Template.bind({});
 onlyTitle.args = {
-  title: 'Title'
+    title: 'Title',
 };
 
 export const onlyText = Template.bind({});
 onlyText.args = {
-  text: 'some text'
+    text: 'some text',
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-  title: 'Title',
-  text: 'some text'
+    title: 'Title',
+    text: 'some text',
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const onlyTitleDark = Template.bind({});
 onlyTitleDark.args = {
-  title: 'Title'
+    title: 'Title',
 };
 onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const onlyTextDark = Template.bind({});
 onlyTextDark.args = {
-  text: 'some text'
+    text: 'some text',
 };
 onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const SizeL = Template.bind({});
 SizeL.args = {
-  title: 'Title',
-  text: 'some text',
-  size: TextSize.L
+    title: 'Title',
+    text: 'some text',
+    size: TextSize.L,
 };
 
 export const SizeM = Template.bind({});
 SizeM.args = {
-  title: 'Title',
-  text: 'some text',
-  size: TextSize.M
+    title: 'Title',
+    text: 'some text',
+    size: TextSize.M,
 };
 
 export const SizeS = Template.bind({});
 SizeS.args = {
-  title: 'Title',
-  text: 'some text',
-  size: TextSize.S
+    title: 'Title',
+    text: 'some text',
+    size: TextSize.S,
 };

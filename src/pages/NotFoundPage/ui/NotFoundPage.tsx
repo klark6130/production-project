@@ -4,14 +4,17 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 
 interface NotFoundPageProps {
-  className?: string
+    className?: string;
 }
 
 export const NotFoundPage = memo(({ className }: NotFoundPageProps) => {
-  const { t } = useTranslation();
-  return (
-    <div data-testid={'NotFoundPage'} className={classNames(cls.NotFoundPage, {}, [className])}>
-      { t('Страница не найдена')}
-    </div>
-  )
-})
+    const { t } = useTranslation();
+    return (
+        <div
+            data-testid={'NotFoundPage'}
+            className={classNames(cls.NotFoundPage, {}, [className])}
+        >
+            {t('Страница не найдена')}
+        </div>
+    );
+});

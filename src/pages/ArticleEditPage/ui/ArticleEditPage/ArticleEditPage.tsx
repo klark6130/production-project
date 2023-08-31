@@ -7,17 +7,19 @@ import { Page } from '@/widgets/Page';
 import { useParams } from 'react-router-dom';
 
 interface ArticleEditPageProps {
-  className?: string
-} 
+    className?: string;
+}
 const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
-  const { t } = useTranslation();
-  const { id } = useParams<{ id: string }>();
-  const isEdit = Boolean(id);
-  return (
-    <Page className={classNames(cls.ArticleEditPage, {}, [className]) }>
-      {isEdit ? 'Редактирование статьи с ID ' + id : ' Создание новой статьи ' }
-    </Page>
-  )
+    const { t } = useTranslation();
+    const { id } = useParams<{ id: string }>();
+    const isEdit = Boolean(id);
+    return (
+        <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
+            {isEdit
+                ? 'Редактирование статьи с ID ' + id
+                : ' Создание новой статьи '}
+        </Page>
+    );
 });
 
-export default ArticleEditPage
+export default ArticleEditPage;

@@ -6,16 +6,17 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { RatingCard } from './RatingCard';
 
 export default {
-  title: 'entities/Rating/RatingCard',
-  component: RatingCard,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'entities/Rating/RatingCard',
+    component: RatingCard,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof RatingCard>;
 
-const Template: ComponentStory<typeof RatingCard> = (args: any) => <RatingCard {...args} />;
+const Template: ComponentStory<typeof RatingCard> = (args: any) => (
+    <RatingCard {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-};
-Normal.decorators = []
+Normal.args = {};
+Normal.decorators = [];

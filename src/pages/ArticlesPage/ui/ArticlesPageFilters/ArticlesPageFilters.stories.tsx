@@ -6,18 +6,17 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ArticlesPageFilters } from './ArticlesPageFilters';
 
 export default {
-  title: 'pages/Article/ArticlesPageFilters',
-  component: ArticlesPageFilters,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    title: 'pages/Article/ArticlesPageFilters',
+    component: ArticlesPageFilters,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof ArticlesPageFilters>;
 
-const Template: ComponentStory<typeof ArticlesPageFilters> = (args: any) => <ArticlesPageFilters {...args} />;
+const Template: ComponentStory<typeof ArticlesPageFilters> = (args: any) => (
+    <ArticlesPageFilters {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-};
-Normal.decorators = [
-  StoreDecorator({})
-]
+Normal.args = {};
+Normal.decorators = [StoreDecorator({})];

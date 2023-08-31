@@ -1,11 +1,11 @@
 {
-  "id": "1",
-  "lastname": "admin",
-  "age": 36,
-  "currency": "RUB",
-  "country": "Russia",
-  "city": "Moscow",
-  "username": "testuser",
-  "avatar": "https://e1.pngegg.com/pngimages/356/954/png-clipart-mr-robot-tv-series-folder-icon-2015-mr-robot-256x256-thumbnail.png",
-  "first": "Test"
+    "id": "1",
+    "lastname": "admin",
+    "age": 36,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "testuser",
+    "avatar": "https://e1.pngegg.com/pngimages/356/954/png-clipart-mr-robot-tv-series-folder-icon-2015-mr-robot-256x256-thumbnail.png",
+    "first": "Test"
 }

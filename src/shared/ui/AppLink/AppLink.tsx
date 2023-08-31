@@ -4,23 +4,33 @@ import { Link, LinkProps } from 'react-router-dom';
 import cls from './AppLink.module.scss';
 
 export enum AppLinkTheme {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary'
+    PRIMARY = 'primary',
+    SECONDARY = 'secondary',
 }
 
 interface AppLinkProps extends LinkProps {
-  className?: string
-  theme?: AppLinkTheme
-  children?: ReactNode
+    className?: string;
+    theme?: AppLinkTheme;
+    children?: ReactNode;
 }
 
 const AppLink = memo((props: AppLinkProps) => {
-  const { to, className, children, theme = AppLinkTheme.PRIMARY, ...otherProps } = props;
-  return (
-    <Link to={to} className={classNames(cls.appLink, {}, [className, cls[theme]])} {...otherProps}>
-      {children}
-    </Link>
-  )
-})
+    const {
+        to,
+        className,
+        children,
+        theme = AppLinkTheme.PRIMARY,
+        ...otherProps
+    } = props;
+    return (
+        <Link
+            to={to}
+            className={classNames(cls.appLink, {}, [className, cls[theme]])}
+            {...otherProps}
+        >
+            {children}
+        </Link>
+    );
+});
 
 export { AppLink };
