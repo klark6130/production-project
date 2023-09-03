@@ -2,6 +2,15 @@ const fs = require('fs');
 const jsonServer = require('json-server');
 const jwt = require('jsonwebtoken');
 const path = require('path');
+const https = require('https');
+
+// генерация сертификата при помощи https://letsencrypt.org/ru/getting-started/#%D0%B5%D1%81%D1%82%D1%8C-%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF-%D0%BF%D0%BE-ssh
+// а именно https://certbot.eff.org/instructions?ws=nginx&os=ubuntubionic&tab=standard
+
+const options = {
+  key: fs.readFileSync(path.resolve(__dirname, 'privkey1.pem')),
+  cert: fs.readFileSync(path.resolve(__dirname, 'cert1.pem'))
+}
 
 const server = jsonServer.create();
 
@@ -54,6 +63,20 @@ server.use((req, res, next) => {
 
 server.use(router);
 
-server.listen(8000, () => {
-  console.log('Server is running on 8000 port');
-})
+if(process.argv.slice(2).includes('--https')){
+  
+  const httpsServer = https.createServer(options, server);
+
+  const PORT = 8443;
+
+  httpsServer.listen(PORT, () => {
+    console.log(`Server https is running on ${PORT} port`);
+  })
+} else {
+  const PORT = 8000;
+
+  server.listen(PORT, () => {
+    console.log(`Server is running on ${PORT} port`);
+  })
+}
+
