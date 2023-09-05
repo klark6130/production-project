@@ -24,6 +24,7 @@
     },
     // In tsconfig.json
     "include": [
+        "./webpack.config.ts",
         "./config/**/*.ts",
         "./config/**/*.tsx",
         "./src/**/*.ts",
