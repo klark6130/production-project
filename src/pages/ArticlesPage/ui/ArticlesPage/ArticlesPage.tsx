@@ -10,7 +10,10 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { getArticlesPageError } from '../../model/selectors/articlesPageSelectors';
+import {
+    getArticlesPageError,
+    useArticleItemById,
+} from '../../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlices';
@@ -31,7 +34,10 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const dispatch = useAppDispatch();
     const error = useSelector(getArticlesPageError);
 
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
+
+    const data = useArticleItemById('7');
+    console.log('data in articles Page', data);
 
     const onLoadNextPart = useCallback(() => {
         if (__PROJECT__ !== 'storybook') {
