@@ -30,7 +30,8 @@
         "./src/**/*.ts",
         "./src/**/*.tsx",
         "./scripts/*.js",
-        "./scripts/**/*.js"
+        "./scripts/**/*.js",
+        "./scripts/**/*.ts"
     ],
     "exclude": [
         // "cypress",

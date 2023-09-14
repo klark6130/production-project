@@ -6,6 +6,8 @@ import { counterActions, useCounterActions } from '../model/slice/counterSlice';
 
 interface CounterProps {
     className?: string;
+    on?: boolean;
+    off?: boolean;
 }
 export const Counter = (props: CounterProps) => {
     const counterValue = useCounterValue();
