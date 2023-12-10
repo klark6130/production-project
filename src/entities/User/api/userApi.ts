@@ -18,8 +18,16 @@ const userApi = rtkApi.injectEndpoints({
                 }
             }),
         }),
+        getUserById: build.query<User, string>({
+            query: ( userId) => ({
+                url: '/users/' + userId,
+                method: 'GET',
+            }),
+        }),
     }),
 });
 
 // export const useJsonSettings = userApi.useSetJsonSettingsMutation;
 export const setJsonSettingsMutation = userApi.endpoints.setJsonSettings.initiate;
+
+export const getUserDataByIdQuery = userApi.endpoints.getUserById.initiate;
