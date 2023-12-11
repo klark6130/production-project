@@ -60,6 +60,10 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         console.log('result', result);
     }, [onSuccess, dispatch, username, password]);
 
+    const onPressEnter = useCallback(() => {
+        onLoginClick();
+    }, [onLoginClick]);
+
     console.log('error', error);
 
     return (
@@ -85,6 +89,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     type="text"
                     className={cls.input}
                     onChange={onChangePassword}
+                    onPressEnter={onPressEnter}
                     value={password}
                 />
                 <Button

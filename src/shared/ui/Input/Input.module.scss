@@ -1,5 +1,7 @@
 .InputWrapper {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .placeholder {
@@ -8,7 +10,7 @@
 }
 
 .input {
-  width: 100%;
+  // width: 100%;
 
   &:focus {
     outline: 1px solid var(--primary-color);

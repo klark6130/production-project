@@ -1,4 +1,11 @@
-import { InputHTMLAttributes, memo, useEffect, useRef } from 'react';
+import {
+    DetailedHTMLProps,
+    InputHTMLAttributes,
+    KeyboardEventHandler,
+    memo,
+    useEffect,
+    useRef,
+} from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
@@ -12,6 +19,7 @@ interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string | number;
     onChange?: (value: string) => void;
+    onPressEnter?: () => void;
     autofocus?: boolean;
     readonly?: boolean;
 }
@@ -21,6 +29,7 @@ export const Input = memo((props: InputProps) => {
         className,
         value,
         onChange,
+        onPressEnter,
         type = 'text',
         placeholder,
         autofocus,
@@ -40,6 +49,18 @@ export const Input = memo((props: InputProps) => {
         onChange?.(e.target.value);
     };
 
+    const onKeyDown = (
+        e: DetailedHTMLProps<
+            InputHTMLAttributes<HTMLInputElement>,
+            HTMLInputElement
+        >,
+    ) => {
+        console.log('e', e);
+        if (e.key === 'Enter') {
+            onPressEnter?.();
+        }
+    };
+
     const mods: Mods = {
         [cls.readonly]: readonly,
     };
@@ -54,6 +75,7 @@ export const Input = memo((props: InputProps) => {
                 type={type}
                 value={value}
                 onChange={onChangeHandler}
+                onKeyDown={onKeyDown}
                 className={cls.input}
                 readOnly={readonly}
                 {...otherProps}

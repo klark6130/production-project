@@ -9,12 +9,13 @@ import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
+import { isMobile } from 'react-device-detect';
 
 interface SidebarProps {
     className?: string;
 }
 export const Sidebar = memo(({ className }: SidebarProps) => {
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(!!isMobile);
     const sidebarItemList = useSelector(getSidebarItems);
 
     const onToggle = () => {
