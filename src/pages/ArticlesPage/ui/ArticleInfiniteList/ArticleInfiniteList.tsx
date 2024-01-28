@@ -1,6 +1,6 @@
 import { ArticleList } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import {

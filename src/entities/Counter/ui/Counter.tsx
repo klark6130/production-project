@@ -1,5 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import { Button } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/deprecated/Button';
 import { useDispatch } from 'react-redux';
 import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions, useCounterActions } from '../model/slice/counterSlice';
