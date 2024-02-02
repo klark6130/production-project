@@ -6,11 +6,11 @@
 
 .placeholder {
     margin-right: 5px;
-    min-width: 40%;
 }
 
 .input {
-    // width: 100%;
+    width: 50%;
+    flex-grow: 1;
 
     &:focus {
         outline: 1px solid var(--primary-color);

@@ -4,7 +4,6 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { HStack } from '@/shared/ui/deprecated/Stack';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
@@ -14,6 +13,7 @@ import { useSelector } from 'react-redux';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
 
 interface NavbarProps {
     className?: string;
@@ -57,8 +57,8 @@ const Navbar = memo(({ className }: NavbarProps) => {
                         />
                         <AppLink
                             to={getRouteArticleCreate()}
-                            theme={AppLinkTheme.SECONDARY}
                             className={cls.createLink}
+                            theme={AppLinkTheme.SECONDARY}
                         >
                             {t('Создать статью')}
                         </AppLink>

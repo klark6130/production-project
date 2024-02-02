@@ -6,7 +6,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { AppLogo } from './AppLogo';
 
 export default {
-    title: 'pages/AppLogo',
+    title: 'shared/AppLogoRedesigned',
     component: AppLogo,
     argTypes: {
         backgroundColor: { control: 'color' },

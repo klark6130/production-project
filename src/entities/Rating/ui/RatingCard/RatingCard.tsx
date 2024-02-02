@@ -61,7 +61,7 @@ export const RatingCard = memo(
 
         const modalContent = (
             <>
-                <Text title={feedbackTitle}></Text>
+                <Text title={feedbackTitle} />
                 <Input
                     data-testid={'RatingCard.Input'}
                     value={feedback}
@@ -80,7 +80,8 @@ export const RatingCard = memo(
                 <VStack align={'center'} gap="8">
                     <Text title={starsCount ? t('Спасибо за оценку') : title} />
                     <StarRating
-                        size={40}
+                        size={24}
+                        className={cls.StarRating}
                         onSelect={onSelectStars}
                         selectedStars={starsCount}
                     />
@@ -88,7 +89,7 @@ export const RatingCard = memo(
                         <Modal isOpen={isModalOpen} lazy>
                             <VStack max gap="32">
                                 {modalContent}
-                                <HStack max gap="16" justify="end">
+                                <HStack max gap="16" justify="end" wrap>
                                     <Button
                                         data-testid={'RatingCard.Close'}
                                         onClick={cancelHandler}

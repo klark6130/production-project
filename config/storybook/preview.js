@@ -1,5 +1,6 @@
 import { addDecorator } from '@storybook/react';
 
+import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
 import {StyleDecorator} from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import {ThemeDecorator} from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import {Theme} from '../../src/shared/const/theme';
@@ -28,7 +29,11 @@ export const parameters = {
   },
 }
 
+
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
-addDecorator(SuspenseDecorator)
+addDecorator(SuspenseDecorator);
+// это декоратор тут не должен быть, но всё из-за ThemeDecorator, который обращается в store!!!!!
+addDecorator(StoreDecorator({}));
+

@@ -24,6 +24,7 @@ export function buildPlugins ({ paths, isDev, apiUrl, project }: BuildOptions): 
       exclude: /node_modules/,
       failOnError: true
     }),
+    // typecheck on fly
     new ForkTsCheckerWebpackPlugin({
       typescript: {
         diagnosticOptions: {

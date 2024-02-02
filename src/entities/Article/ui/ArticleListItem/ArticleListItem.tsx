@@ -2,7 +2,6 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Card } from '@/shared/ui/deprecated/Card';
@@ -19,6 +18,7 @@ import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppImage } from '@/shared/ui/deprecated/AppImage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import ErrorImage from '@/shared/assets/icons/error-img.svg';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
 
 interface ArticleListItemProps {
     className?: string;
@@ -42,7 +42,9 @@ export const ArticleListItem = memo(
             </>
         );
 
-        const errorFallback = <Icon Svg={ErrorImage} height={'100%'} />;
+        const errorFallback = (
+            <Icon Svg={ErrorImage} width={'100%'} height={'100%'} />
+        );
 
         if (view === ArticleView.LIST) {
             const textBlock = article.blocks.find(

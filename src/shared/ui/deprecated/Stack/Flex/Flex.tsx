@@ -2,6 +2,7 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';
+import { wrap } from 'module';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';
@@ -46,6 +47,7 @@ export interface FlexProps extends DivProps {
     direction?: FlexDirection;
     gap?: FlexGap;
     max?: boolean;
+    wrap?: boolean;
 }
 
 export const Flex = ({
@@ -55,6 +57,7 @@ export const Flex = ({
     direction = 'row',
     justify = 'start',
     gap,
+    wrap,
     max,
     ...otherProps
 }: FlexProps) => {
@@ -68,6 +71,7 @@ export const Flex = ({
 
     const mods: Mods = {
         [cls.max]: max,
+        [cls.wrap]: wrap,
     };
 
     return (

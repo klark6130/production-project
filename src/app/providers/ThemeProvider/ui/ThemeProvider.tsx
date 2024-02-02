@@ -15,6 +15,8 @@ const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) => {
         initialTheme || defaultTheme || Theme.LIGHT,
     );
 
+    console.log('in provider: theme', theme);
+
     useEffect(() => {
         if (!isThemeInited && defaultTheme) {
             setTheme(defaultTheme);

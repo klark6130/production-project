@@ -18,5 +18,7 @@ const Template: ComponentStory<typeof RatingCard> = (args: any) => (
 );
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+    title: 'Оцените, пожалуйста',
+};
 Normal.decorators = [];

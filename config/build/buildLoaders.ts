@@ -17,6 +17,7 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
     ]
   }
 
+  // замена currentColor у SVG
   const svgLoader = {
     test: /\.svg$/i,
     issuer: /\.[jt]sx?$/,
