@@ -43,7 +43,7 @@
 name: linting, testing, building
 on:
     push:
-        branches: [master]
+        branches: [master, try-fix-github-actions]
     pull_request:
         branches: [master]
 permissions:
