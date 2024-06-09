@@ -11,6 +11,7 @@ import { useThrottle } from '@/shared/lib/hooks/useThrottle';
 import cls from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
 import { toogleFeatures } from '@/shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -33,7 +34,11 @@ export const Page = memo((props: PageProps) => {
 
     useInfiniteScroll({
         triggerRef,
-        wrapperRef,
+        wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
         callback: onScrollEnd,
     });
 

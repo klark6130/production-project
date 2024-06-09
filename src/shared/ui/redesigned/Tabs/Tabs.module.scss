@@ -1,0 +1,14 @@
+.Tabs {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 8px;
+}
+
+.selected {
+    padding: 8px 16px;
+}
