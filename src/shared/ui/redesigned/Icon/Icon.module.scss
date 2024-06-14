@@ -9,6 +9,8 @@
     outline: none;
     background: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .button:hover .Icon {
