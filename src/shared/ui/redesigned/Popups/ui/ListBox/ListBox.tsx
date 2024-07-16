@@ -16,7 +16,7 @@ export interface ListBoxItem<T extends string> {
     disabled?: boolean;
 }
 
-interface ListBoxProps<T extends string> {
+export interface ListBoxProps<T extends string> {
     items?: Array<ListBoxItem<T>>;
     className?: string;
     value?: T;
