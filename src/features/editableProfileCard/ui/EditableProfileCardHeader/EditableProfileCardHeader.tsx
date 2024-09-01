@@ -68,7 +68,7 @@ export const EditableProfileCardHeader = memo(
                                 {t('Редактировать')}
                             </Button>
                         ) : (
-                            <HStack gap="8" wrap>
+                            <HStack gap="8" wrap="wrap">
                                 <Button
                                     theme={ButtonTheme.OUTLINE_RED}
                                     onClick={onCancelEdit}

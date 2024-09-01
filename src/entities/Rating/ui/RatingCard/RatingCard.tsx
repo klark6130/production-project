@@ -89,7 +89,7 @@ export const RatingCard = memo(
                         <Modal isOpen={isModalOpen} lazy>
                             <VStack max gap="32">
                                 {modalContent}
-                                <HStack max gap="16" justify="end" wrap>
+                                <HStack max gap="16" justify="end" wrap="wrap">
                                     <Button
                                         data-testid={'RatingCard.Close'}
                                         onClick={cancelHandler}

@@ -100,3 +100,14 @@
         text-overflow: ellipsis;
     }
 }
+
+.ArticleListItemRedesigned {
+    &.LIST {
+        width: 100%;
+    }
+
+    &.TILE {
+        width: 240px;
+        height: 350px;
+    }
+}
