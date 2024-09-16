@@ -7,7 +7,7 @@ import TiledIcon from '@/shared/assets/icons/tile.svg';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 import {
     ButtonTheme,
     Button as DeprecatedButton,

@@ -741,8 +741,6 @@
         "ADMIN"
       ],
       "features": {
-        "isArticleRatingEnabled": true,
-        "isCounterEnabled": true,
         "isAppRedesigned": true
       },
       "jsonSettings": {

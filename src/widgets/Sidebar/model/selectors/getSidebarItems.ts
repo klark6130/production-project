@@ -4,10 +4,10 @@ import ArticlesIconDeprecated from '@/shared/assets/icons/articles.svg';
 import MainIconDeprecated from '@/shared/assets/icons/main.svg';
 import ProfileIconDeprecated from '@/shared/assets/icons/profile.svg';
 
-import MainIcon from '@/shared/assets/icons/home.svg';
 import ActicleIcon from '@/shared/assets/icons/article.svg';
-import AboutIcon from '@/shared/assets/icons/Info.svg';
 import ProfileIcon from '@/shared/assets/icons/avatar.svg';
+import MainIcon from '@/shared/assets/icons/home.svg';
+import AboutIcon from '@/shared/assets/icons/Info.svg';
 
 import {
     getRouteAbout,
@@ -15,9 +15,9 @@ import {
     getRouteMain,
     getRouteProfile,
 } from '@/shared/const/router';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 import { createSelector } from '@reduxjs/toolkit';
 import { SidebarItemType } from '../types/sidebar';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     const SidebarItemList: SidebarItemType[] = [

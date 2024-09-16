@@ -1,17 +1,17 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getUIScrollByPath, uiActions } from '@/features/UI';
-import { MutableRefObject, ReactNode, UIEvent, memo, useRef } from 'react';
-import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { toogleFeatures } from '@/shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle';
-import cls from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
-import { toogleFeatures } from '@/shared/lib/features';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
+import { MutableRefObject, ReactNode, UIEvent, memo, useRef } from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import cls from './Page.module.scss';
 
 interface PageProps extends TestProps {
     className?: string;

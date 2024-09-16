@@ -1,12 +1,12 @@
-import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
-import { Card as CardRedesigned } from '@/shared/ui/redesigned/Card';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Card as CardRedesigned } from '@/shared/ui/redesigned/Card';
 import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+import { memo } from 'react';
 import { ArticleView } from '../../model/consts/articleConsts';
 import cls from './ArticleListItem.module.scss';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
 
 interface ArticleListItemSkeletonProps {
     className?: string;

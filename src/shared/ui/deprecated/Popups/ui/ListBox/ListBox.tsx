@@ -8,12 +8,18 @@ import popupCls from '../../styles/popup.module.scss';
 import { Button } from '../../../Button';
 import { HStack } from '../../../../redesigned/Stack';
 
+/**
+ * @deprecated
+ */
 export interface ListBoxItem {
     value: string;
     content: ReactNode;
     disabled?: boolean;
 }
 
+/**
+ * @deprecated
+ */
 export interface ListBoxProps {
     items?: ListBoxItem[];
     className?: string;
