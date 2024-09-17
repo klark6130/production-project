@@ -10,7 +10,6 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import cls from './UiDesignSwitcher.module.scss';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface UiDesignSwitcherProps {
@@ -62,9 +61,7 @@ export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
                     onChange={onChange}
                     items={items}
                     value={isAppRedesigned ? 'new' : 'old'}
-                    className={classNames(cls.UiDesignSwitcher, {}, [
-                        className,
-                    ])}
+                    className={classNames('', {}, [className])}
                 ></ListBox>
             )}
         </HStack>

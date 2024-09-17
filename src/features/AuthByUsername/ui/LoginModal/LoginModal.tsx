@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Modal } from '@/shared/ui/deprecated/Modal';
+import { Modal } from '@/shared/ui/redesigned/Modal';
 import cls from './LoginModal.module.scss';
 import { Suspense, memo } from 'react';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
