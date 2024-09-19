@@ -20,5 +20,8 @@
     "Профиль": "Profile",
     "Статьи": "Articles",
     "Валюта": "Currency",
-    "Страна": "Country"
+    "Страна": "Country",
+    "{{ count }} просмотров_zero": "{{ count }} views",
+    "{{ count }} просмотров_one": "{{ count }} view",
+    "{{ count }} просмотров_other": "{{ count }} views"
 }
