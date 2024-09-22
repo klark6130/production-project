@@ -23,14 +23,21 @@ import cls from './ArticleListItemRedesigned.module.scss';
 
 export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     const { className, article, view, target } = props;
+
     const { t } = useTranslation('article');
 
     const userInfo = (
         <>
-            <Avatar size={32} src={article.user.avatar} />
+            <Avatar
+                size={32}
+                src={article.user.avatar}
+                className={cls.avatar}
+            />
             <Text bold text={article.user.username} />
         </>
     );
+
+    console.log('article.user', article.user);
 
     const views = (
         <HStack gap="8">
@@ -53,12 +60,12 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                 padding="24"
                 max
                 data-testid={'ArticleListItem'}
-                className={classNames(cls.ArticleListItem, {}, [
+                className={classNames(cls.ArticleListItemRedesigned, {}, [
                     className,
                     cls[view],
                 ])}
             >
-                <VStack max gap="16">
+                <VStack max gap="16" className={cls.LIST}>
                     <HStack gap="8" max>
                         {userInfo}
                         <Text text={article.createdAt} />
@@ -103,14 +110,19 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
             data-testid={'ArticleListItem'}
             target={target}
             to={getRouteArticleDetails(article.id)}
-            className={classNames(cls.ArticleListItem, {}, [
+            className={classNames(cls.ArticleListItemRedesigned, {}, [
                 className,
                 cls[view],
             ])}
         >
-            <Card className={cls.card} border="round">
+            <Card
+                className={cls.card}
+                border="round"
+                padding={'0'}
+                data-name="ArticleListItem"
+            >
                 <AppImage
-                    fallback={<Skeleton width={200} height={200} />}
+                    fallback={<Skeleton width={'100%'} height={200} />}
                     errorFallback={errorFallback}
                     alt={article.title}
                     src={article.img}
