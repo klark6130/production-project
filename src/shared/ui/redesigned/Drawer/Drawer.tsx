@@ -20,10 +20,6 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100;
 
-/**
- * Устарел, использовать новые компоненты из папки redesigned
- * @deprecated
- */
 export const DrawerContent = memo((props: DrawerProps) => {
     const { Gesture, Spring } = useAnimationLibs();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
@@ -130,10 +126,6 @@ const DrawerAsync = (props: DrawerProps) => {
     return <DrawerContent {...props} />;
 };
 
-/**
- * Устарел, использовать новые компоненты из папки redesigned
- * @deprecated
- */
 export const Drawer = (props: DrawerProps) => {
     return (
         <AnimationProvider>

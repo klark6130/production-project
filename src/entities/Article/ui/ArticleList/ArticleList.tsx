@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArticleView } from '../../model/consts/articleConsts';
@@ -48,7 +48,10 @@ export const ArticleList = memo(
                         cls[view],
                     ])}
                 >
-                    <Text size={TextSize.L} title={t('Статьи не найдены')} />
+                    <TextDeprecated
+                        size={TextSize.L}
+                        title={t('Статьи не найдены')}
+                    />
                 </div>
             );
         }

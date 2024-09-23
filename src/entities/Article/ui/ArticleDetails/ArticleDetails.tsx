@@ -5,20 +5,23 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
-import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import {
-    Text as TextDeprecated,
     TextAlign,
+    Text as TextDeprecated,
     TextSize,
 } from '@/shared/ui/deprecated/Text';
-import { memo, useCallback, useEffect } from 'react';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { ArticleBlockType } from '../../model/consts/articleConsts';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -26,16 +29,9 @@ import {
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { ArticleBlock } from '../../model/types/article';
-import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleDetails.module.scss';
 import { renderArticleBlock } from './renderBlock';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { Text } from '@/shared/ui/redesigned/Text';
-import { AppImage } from '@/shared/ui/redesigned/AppImage';
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -88,7 +84,13 @@ const Redesigned = () => {
             <Text title={article?.title} size="l" bold />
             <Text title={article?.subtitle} />
             <AppImage
-                fallback={<Skeleton width={'100%'} height={420} border="16" />}
+                fallback={
+                    <SkeletonRedesigned
+                        width={'100%'}
+                        height={420}
+                        border="16"
+                    />
+                }
                 src={article?.img}
                 className={cls.img}
             />
@@ -114,36 +116,34 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 
     let content;
 
+    const Skeleton = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => SkeletonRedesigned,
+        off: () => SkeletonDeprecated,
+    });
+
     if (isLoading) {
         content = (
-            <>
-                <SkeletonDeprecated
+            <VStack gap="16" max>
+                <Skeleton
                     className={cls.avatar}
                     width={200}
                     height={200}
                     border={'50%'}
                 />
-                <SkeletonDeprecated
-                    className={cls.title}
-                    width={300}
-                    height={32}
-                />
-                <SkeletonDeprecated
-                    className={cls.skeleton}
-                    width={600}
-                    height={24}
-                />
-                <SkeletonDeprecated
+                <Skeleton className={cls.title} width={300} height={32} />
+                <Skeleton className={cls.skeleton} width={600} height={24} />
+                <Skeleton
                     className={cls.skeleton}
                     width={'100%'}
                     height={200}
                 />
-                <SkeletonDeprecated
+                <Skeleton
                     className={cls.skeleton}
                     width={'100%'}
                     height={200}
                 />
-            </>
+            </VStack>
         );
     } else if (error) {
         content = (
