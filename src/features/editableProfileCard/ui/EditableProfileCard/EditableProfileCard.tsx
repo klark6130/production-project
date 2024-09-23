@@ -12,7 +12,7 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
 import {
     getProfileError,
     getProfileForm,
@@ -134,7 +134,7 @@ export const EditableProfileCard = memo(
                     <EditableProfileCardHeader />
                     {validateErrors?.length &&
                         validateErrors.map((err: ValidateProfileError) => (
-                            <Text
+                            <TextDeprecated
                                 theme={TextTheme.ERROR}
                                 text={validateErrorTranslates[err]}
                                 key={err}

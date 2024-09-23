@@ -4,16 +4,24 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import {
+    Button as ButtonDeprecated,
+    ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
+import {
+    AppLink as AppLinkDeprecated,
+    AppLinkTheme,
+} from '@/shared/ui/deprecated/AppLink';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 
 interface NavbarProps {
     className?: string;
@@ -32,6 +40,12 @@ const Navbar = memo(({ className }: NavbarProps) => {
         setIsAuthModal(true);
     }, []);
 
+    const mainClass = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => 'NavbarRedesigned',
+        off: () => 'Navbar',
+    });
+
     if (authData) {
         return (
             <ToggleFeatures
@@ -49,19 +63,19 @@ const Navbar = memo(({ className }: NavbarProps) => {
                     </header>
                 }
                 off={
-                    <header className={classNames(cls.navbar, {}, [className])}>
-                        <Text
+                    <header className={classNames(cls.Navbar, {}, [className])}>
+                        <TextDeprecated
                             className={cls.appName}
                             title={'My Application'}
                             theme={TextTheme.INVERTED}
                         />
-                        <AppLink
+                        <AppLinkDeprecated
                             to={getRouteArticleCreate()}
                             className={cls.createLink}
                             theme={AppLinkTheme.SECONDARY}
                         >
                             {t('Создать статью')}
-                        </AppLink>
+                        </AppLinkDeprecated>
                         <HStack gap="16" className={cls.actions}>
                             <NotificationButton />
                             <AvatarDropdown />
@@ -73,14 +87,29 @@ const Navbar = memo(({ className }: NavbarProps) => {
     }
 
     return (
-        <header className={classNames(cls.navbar, {}, [className])}>
-            <Button
-                theme={ButtonTheme.CLEAR_INVERTED}
-                className={cls.links}
-                onClick={onShowModal}
-            >
-                {t('Войти')}
-            </Button>
+        <header className={classNames(cls[mainClass], {}, [className])}>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <Button
+                        variant="clear"
+                        className={cls.links}
+                        onClick={onShowModal}
+                    >
+                        {t('Войти')}
+                    </Button>
+                }
+                off={
+                    <ButtonDeprecated
+                        theme={ButtonTheme.CLEAR_INVERTED}
+                        className={cls.links}
+                        onClick={onShowModal}
+                    >
+                        {t('Войти')}
+                    </ButtonDeprecated>
+                }
+            />
+
             {isAuthModal && (
                 <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />
             )}

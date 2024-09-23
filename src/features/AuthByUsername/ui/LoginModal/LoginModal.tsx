@@ -3,7 +3,7 @@ import { Modal } from '@/shared/ui/redesigned/Modal';
 import cls from './LoginModal.module.scss';
 import { Suspense, memo } from 'react';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
-import { Loader } from '@/shared/ui/deprecated/Loader';
+import { Loader as LoaderDeprecated } from '@/shared/ui/deprecated/Loader';
 
 interface LoginModalProps {
     className?: string;
@@ -19,7 +19,7 @@ export const LoginModal = memo(
                 onClose={onClose}
                 lazy={true}
             >
-                <Suspense fallback={<Loader />}>
+                <Suspense fallback={<LoaderDeprecated />}>
                     <LoginFormAsync onSuccess={onClose} />
                 </Suspense>
             </Modal>
