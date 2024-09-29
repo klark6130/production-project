@@ -11,6 +11,7 @@ import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 
 interface UiDesignSwitcherProps {
     className?: string;
@@ -23,6 +24,7 @@ export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
     const authData = useSelector(getUserAuthData);
 
     const [isLoading, setIsLoading] = useState(false);
+    const forceUpdate = useForceUpdate();
 
     const dispatch = useAppDispatch();
 
@@ -47,6 +49,7 @@ export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
                 }),
             ).unwrap();
             setIsLoading(false);
+            forceUpdate();
         }
     };
 

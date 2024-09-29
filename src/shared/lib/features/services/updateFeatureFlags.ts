@@ -2,7 +2,7 @@ import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { FeaturesFlags } from '@/shared/types/featureFlags';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { updateFeatureFlagsMutation } from '../api/featureFlagsApi';
-import { getAllFeatureFlags } from '../lib/setGetFeatures';
+import { getAllFeatureFlags, setFeatureFlags } from '../lib/setGetFeatures';
 
 interface UpdateFeatureFlagOptions {
     userId: string
@@ -16,20 +16,23 @@ export const updateFeatureFlag = createAsyncThunk<
 >('user/saveJsonSettings', async ({ newFeatures, userId }, thunkAPI) => {
     const { rejectWithValue, dispatch } = thunkAPI;
 
+    const allFeatures = {
+        ...getAllFeatureFlags(),
+        ...newFeatures
+    }
+
     try {
         // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         await dispatch(
             updateFeatureFlagsMutation({
                 userId,
-                features: {
-                    ...getAllFeatureFlags(),
-                    ...newFeatures
-                }
+                features: allFeatures
             })
         )
         console.log('reload window')
 
-        window.location.reload(); 
+        setFeatureFlags(allFeatures)
+
         return undefined;
     } catch (error) {
         console.error(error);
