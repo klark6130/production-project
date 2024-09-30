@@ -1,6 +1,14 @@
+import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/localtorage';
 import { FeaturesFlags } from '@/shared/types/featureFlags';
 
-let featureFlags: FeaturesFlags = {}
+const defaultFeatures: FeaturesFlags = {
+    isAppRedesigned: localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) === 'new'
+}
+
+// ФИЧИ не меняются в ходе сесси, их не обязательно делать реактивными
+let featureFlags: FeaturesFlags = {
+    ...defaultFeatures
+}
 
 export function setFeatureFlags(newFeatureFlags?: FeaturesFlags){
     if(newFeatureFlags) {

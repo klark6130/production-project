@@ -6,17 +6,18 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
-import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import {
     TextAlign,
     Text as TextDeprecated,
     TextSize,
 } from '@/shared/ui/deprecated/Text';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { memo, useEffect } from 'react';
@@ -31,7 +32,6 @@ import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArt
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
 import { renderArticleBlock } from './renderBlock';
-import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 
 interface ArticleDetailsProps {
     className?: string;

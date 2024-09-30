@@ -23,6 +23,7 @@
         "test:e2e": "cypress open",
         "test:ui": "npx loki test",
         "test:ui:ok": "npx loki update",
+        "test:ui:file": "npx loki --storiesFilter ArticleDetails.stories",
         "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
         "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
         "test:ui:json": "node scripts/generate-visual-json-report.js",
