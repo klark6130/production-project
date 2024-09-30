@@ -79,7 +79,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                         className={cls.img}
                         alt={article.title}
                     />
-                    {textBlock.paragraphs && (
+                    {textBlock?.paragraphs && (
                         <Text
                             bold={false}
                             className={cls.textBlock}

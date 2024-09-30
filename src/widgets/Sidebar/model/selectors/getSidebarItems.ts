@@ -16,9 +16,8 @@ import {
     getRouteProfile,
 } from '@/shared/const/router';
 import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
-import { createSelector } from '@reduxjs/toolkit';
-import { SidebarItemType } from '../types/sidebar';
 import { useSelector } from 'react-redux';
+import { SidebarItemType } from '../types/sidebar';
 
 export const useSidebarItems = () => {
     const userData = useSelector(getUserAuthData);
