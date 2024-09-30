@@ -4,6 +4,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { CommentCard } from './CommentCard';
+import { FeaturesDecorator } from '@/shared/config/storybook/FeatureFlags/FeatureFlags';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'entities/Comment/CommentCard',
@@ -17,23 +19,22 @@ const Template: ComponentStory<typeof CommentCard> = (args: any) => (
     <CommentCard {...args} />
 );
 
-export const Normal = Template.bind({});
-Normal.args = {
+const normalArgs = {
     comment: {
         id: '1',
         text: 'Hello comment',
         user: { id: '1', username: 'admin' },
     },
 };
+
+export const Normal = Template.bind({});
+Normal.args = normalArgs;
 Normal.decorators = [];
 
-export const isLoading = Template.bind({});
-isLoading.args = {
-    comment: {
-        id: '1',
-        text: 'Hello comment',
-        user: { id: '1', username: 'admin' },
-    },
-    isLoading: true,
-};
-isLoading.decorators = [];
+export const NormalRedesigned = Template.bind({});
+NormalRedesigned.args = normalArgs;
+NormalRedesigned.decorators = [NewDesignDecorator];
+
+export const IsLoading = Template.bind({});
+IsLoading.args = normalArgs;
+IsLoading.decorators = [];

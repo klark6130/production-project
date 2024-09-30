@@ -1,21 +1,21 @@
-import { getUserInited, initAuthData } from '@/entities/User';
+import { getUserInited, initAuthData, useJsonSettings } from '@/entities/User';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { Navbar } from '@/widgets/Navbar';
-import { Sidebar } from '@/widgets/Sidebar';
-import { Suspense, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { AppRouter } from './providers/router';
 import { PageLoader } from '@/widgets/PageLoader';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { MainLayout } from '@/shared/layouts/MainLayout';
-import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
-import { ScrollToTopButton } from '@/features/scrollToTopButton';
-import { ScrollToolbar } from '@/widgets/ScrollToolbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { memo, Suspense, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useAppToolbar } from './lib/useAppToolbar';
+import { AppRouter } from './providers/router';
+import { ThemeProvider } from './providers/ThemeProvider';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
-function App() {
+const App = memo(function App() {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const inited = useSelector(getUserInited);
@@ -79,6 +79,6 @@ function App() {
             }
         />
     );
-}
+});
 
-export default App;
+export default withTheme(App);

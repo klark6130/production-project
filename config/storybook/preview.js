@@ -6,6 +6,7 @@ import {ThemeDecorator} from '../../src/shared/config/storybook/ThemeDecorator/T
 import {Theme} from '../../src/shared/const/theme';
 import {RouterDecorator} from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator'
+import {FeaturesDecorator} from '../../src/shared/config/storybook/FeatureFlags/FeatureFlags';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -36,4 +37,5 @@ addDecorator(RouterDecorator);
 addDecorator(SuspenseDecorator);
 // это декоратор тут не должен быть, но всё из-за ThemeDecorator, который обращается в store!!!!!
 addDecorator(StoreDecorator({}));
+addDecorator(FeaturesDecorator({}))
 

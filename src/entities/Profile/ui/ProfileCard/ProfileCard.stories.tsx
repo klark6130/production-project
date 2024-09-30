@@ -7,6 +7,9 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
+import { FeaturesDecorator } from '@/shared/config/storybook/FeatureFlags/FeatureFlags';
+import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'entities/ProfileCard',
@@ -21,8 +24,7 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
     <ProfileCard {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+const primaryArgs = {
     data: {
         age: 31,
         username: 'admin',
@@ -34,10 +36,33 @@ Primary.args = {
         avatar: 'https://www.w3schools.com/howto/img_avatar.png',
     },
 };
+
+export const Primary = Template.bind({});
+Primary.args = primaryArgs;
 Primary.decorators = [
     StoreDecorator({
         loginForm: { username: 'adminnnn', password: '123' },
     }),
+];
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = primaryArgs;
+PrimaryRedesigned.decorators = [
+    StoreDecorator({
+        loginForm: { username: 'adminnnn', password: '123' },
+    }),
+    NewDesignDecorator,
+    ThemeDecorator(Theme.DARK),
+];
+
+export const PrimaryRedesignedLight = Template.bind({});
+PrimaryRedesignedLight.args = primaryArgs;
+PrimaryRedesignedLight.decorators = [
+    StoreDecorator({
+        loginForm: { username: 'adminnnn', password: '123' },
+    }),
+    NewDesignDecorator,
+    ThemeDecorator(Theme.LIGHT),
 ];
 
 export const withError = Template.bind({});
