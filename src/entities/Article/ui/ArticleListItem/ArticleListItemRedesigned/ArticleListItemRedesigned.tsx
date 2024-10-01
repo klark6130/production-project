@@ -37,8 +37,6 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
         </>
     );
 
-    console.log('article.user', article.user);
-
     const views = (
         <HStack gap="8">
             <Icon Svg={EyeIcon} />

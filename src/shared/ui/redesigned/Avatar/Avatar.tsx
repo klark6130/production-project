@@ -23,8 +23,6 @@ export const Avatar = ({ className, src, size, alt }: AvatarProps) => {
         };
     }, [size]);
 
-    console.log('className', className);
-
     const errorFallback = (
         <Icon Svg={UserIcon} width={size} height={size} className={className} />
     );
