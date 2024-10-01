@@ -8,6 +8,7 @@ import {
     ArticleBlockType,
     ArticleType,
 } from '../../model/consts/articleConsts';
+import { FeaturesDecorator } from '@/shared/config/storybook/FeatureFlags/FeatureFlags';
 
 export default {
     title: 'entities/Article/ArticleDetails',
@@ -105,6 +106,17 @@ Normal.decorators = [
     }),
 ];
 
+export const NormalRedesigned = Template.bind({});
+NormalRedesigned.args = {};
+NormalRedesigned.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            data: article,
+        },
+    }),
+    FeaturesDecorator({ isAppRedesigned: true }),
+];
+
 export const Loading = Template.bind({});
 Loading.args = {};
 Loading.decorators = [
@@ -113,6 +125,17 @@ Loading.decorators = [
             isLoading: true,
         },
     }),
+];
+
+export const LoadingRedesigned = Template.bind({});
+LoadingRedesigned.args = {};
+LoadingRedesigned.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            isLoading: true,
+        },
+    }),
+    FeaturesDecorator({ isAppRedesigned: true }),
 ];
 
 export const Error = Template.bind({});
