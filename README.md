@@ -1,3 +1,4 @@
+[![linting, testing, building](https://github.com/klark6130/production-project/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/klark6130/production-project/actions/workflows/main.yml)
 ## Запуск проекта
 
 ```
