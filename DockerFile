@@ -1,0 +1,6 @@
+FROM nginx
+# when webpack build project
+COPY build /usr/share/nginx/html
+
+# when Vite build project
+# COPY dist /usr/share/nginx/html
